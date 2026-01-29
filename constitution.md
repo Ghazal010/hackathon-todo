@@ -22,7 +22,7 @@
 - Reuse and evolve code, don't rewrite from scratch
 
 ### 3. AI-Native Architecture
-- Use Gemini as the LLM backend (free tier)
+- Use OpenAI as the LLM backend (free tier)
 - MCP (Model Context Protocol) for tool integration
 - Conversational interface over traditional UI where applicable
 - AI agents handle business logic, not just UI
@@ -54,8 +54,8 @@
 - Auth: Better Auth with JWT
 
 ### Phase 3: AI Chatbot
-- LLM: Google Gemini (free tier)
-- Frontend: OpenAI ChatKit (adapted for Gemini)
+- LLM: OpenAI GPT (free tier)
+- Frontend: OpenAI ChatKit
 - MCP: Official MCP SDK
 
 ### Phase 4: Local Kubernetes

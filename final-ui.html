@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamFlow - Beautiful Todo App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+        :root {
+          --rose-mist: #EAC8CA;
+          --lavender-dream: #F2D5F8;
+          --orchid-whisper: #E6C0E9;
+          --purple-haze: #BFABCB;
+          --slate-purple: #8D89A6;
+          --shadow-soft: rgba(191, 171, 203, 0.15);
+          --shadow-medium: rgba(141, 137, 166, 0.2);
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: 'Quicksand', sans-serif;
+          min-height: 100vh;
+          overflow-x: hidden;
+        }
+
+        /* Icon specific styles to match Lucide React */
+        .icon-base {
+          display: inline-block;
+          width: 1em;
+          height: 1em;
+          stroke: currentColor;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          fill: none;
+          vertical-align: middle;
+        }
+
+        .icon-xs { width: 0.75rem; height: 0.75rem; }
+        .icon-sm { width: 1rem; height: 1rem; }
+        .icon-md { width: 1.25rem; height: 1.25rem; }
+        .icon-lg { width: 1.5rem; height: 1.5rem; }
+        .icon-xl { width: 1.75rem; height: 1.75rem; }
+        .icon-2xl { width: 2rem; height: 2rem; }
+
+        .glass-effect {
+          background: rgba(255, 255, 255, 0.7);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        .dark .glass-effect {
+          background: rgba(141, 137, 166, 0.2);
+          border: 1px solid rgba(191, 171, 203, 0.3);
+        }
+
+        .gradient-bg {
+          background: linear-gradient(135deg,
+            var(--lavender-dream) 0%,
+            var(--orchid-whisper) 50%,
+            var(--rose-mist) 100%);
+        }
+
+        .dark .gradient-bg {
+          background: linear-gradient(135deg,
+            #1a1625 0%,
+            #2a2435 50%,
+            #3a3445 100%);
+        }
+
+        .floating-animation {
+          animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+
+        .slide-in {
+          animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .task-enter {
+          animation: taskEnter 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes taskEnter {
+          0% {
+            opacity: 0;
+            transform: scale(0.8) translateY(30px);
+          }
+          100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+
+        .hover-lift {
+          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 40px var(--shadow-medium);
+        }
+
+        .checkbox-custom {
+          position: relative;
+          cursor: pointer;
+        }
+
+        .checkbox-custom input {
+          position: absolute;
+          opacity: 0;
+        }
+
+        .checkbox-mark {
+          width: 24px;
+          height: 24px;
+          border: 2px solid var(--purple-haze);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          background: white;
+        }
+
+        .dark .checkbox-mark {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: var(--orchid-whisper);
+        }
+
+        .checkbox-custom input:checked ~ .checkbox-mark {
+          background: linear-gradient(135deg, var(--orchid-whisper), var(--purple-haze));
+          border-color: var(--purple-haze);
+        }
+
+        .ripple {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .ripple::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background: rgba(191, 171, 203, 0.4);
+          transform: translate(-50%, -50%);
+          transition: width 0.6s, height 0.6s;
+        }
+
+        .ripple:active::after {
+          width: 300px;
+          height: 300px;
+        }
+
+        .priority-high {
+          border-left: 4px solid #ff6b6b;
+        }
+
+        .priority-medium {
+          border-left: 4px solid #feca57;
+        }
+
+        .priority-low {
+          border-left: 4px solid #48dbfb;
+        }
+
+        .tag-pill {
+          background: var(--lavender-dream);
+          color: var(--slate-purple);
+          padding: 4px 12px;
+          border-radius: 20px;
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+        }
+
+        .dark .tag-pill {
+          background: rgba(230, 192, 233, 0.2);
+          color: var(--lavender-dream);
+        }
+
+        .decorative-blob {
+          position: absolute;
+          border-radius: 50%;
+          filter: blur(60px);
+          opacity: 0.3;
+          animation: blobFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes blobFloat {
+          0%, 100% { transform: translate(0, 0) scale(1); }
+          33% { transform: translate(30px, -30px) scale(1.1); }
+          66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+
+        .stat-card {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .stat-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+          transition: left 0.5s;
+        }
+
+        .stat-card:hover::before {
+          left: 100%;
+        }
+
+        .search-glow {
+          box-shadow: 0 0 0 0 rgba(230, 192, 233, 0.7);
+          transition: box-shadow 0.3s ease;
+        }
+
+        .search-glow:focus {
+          box-shadow: 0 0 0 4px rgba(230, 192, 233, 0.3);
+        }
+
+        .title-text {
+          font-family: 'Cormorant Garamond', serif;
+          font-weight: 600;
+          letter-spacing: 1px;
+        }
+
+        .button-gradient {
+          background: linear-gradient(135deg, var(--orchid-whisper), var(--purple-haze));
+          transition: all 0.3s ease;
+        }
+
+        .button-gradient:hover {
+          background: linear-gradient(135deg, var(--purple-haze), var(--slate-purple));
+          transform: scale(1.05);
+        }
+
+        .smooth-scroll {
+          scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+          background: var(--lavender-dream);
+          border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+          background: var(--purple-haze);
+          border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+          background: var(--slate-purple);
+        }
+    </style>
+</head>
+<body>
+    <div id="root" class="min-h-screen"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function TodoApp() {
+          // State for tasks with all the properties needed for the UI
+          const [tasks, setTasks] = useState([
+            { id: 1, title: 'Design new landing page', completed: false, priority: 'high', tags: ['work'], dueDate: '2024-02-15', createdAt: '2024-01-29T10:30:00Z', updatedAt: '2024-01-29T10:30:00Z' },
+            { id: 2, title: 'Morning meditation', completed: true, priority: 'medium', tags: ['personal'], dueDate: '2024-02-10', createdAt: '2024-01-29T10:30:00Z', updatedAt: '2024-01-29T10:30:00Z' },
+            { id: 3, title: 'Grocery shopping', completed: false, priority: 'low', tags: ['errands'], dueDate: '2024-02-12', createdAt: '2024-01-29T10:30:00Z', updatedAt: '2024-01-29T10:30:00Z' }
+          ]);
+
+          const [newTask, setNewTask] = useState('');
+          const [filter, setFilter] = useState('all');
+          const [searchQuery, setSearchQuery] = useState('');
+          const [darkMode, setDarkMode] = useState(false);
+          const [showAddForm, setShowAddForm] = useState(false);
+
+          // Stats state
+          const [stats, setStats] = useState({ total: 3, completed: 1, active: 2 });
+
+          // Filter tasks based on filter and search (client-side filtering for demo)
+          const filteredTasks = tasks.filter(task => {
+            const matchesFilter = filter === 'all' ? true :
+              filter === 'active' ? !task.completed :
+              filter === 'completed' ? task.completed : true;
+            const matchesSearch = task.title.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchesFilter && matchesSearch;
+          });
+
+          // Calculate stats
+          useEffect(() => {
+            const total = tasks.length;
+            const completed = tasks.filter(t => t.completed).length;
+            const active = total - completed;
+            setStats({ total, completed, active });
+          }, [tasks]);
+
+          // Add a new task
+          const addTask = () => {
+            if (newTask.trim()) {
+              const newTaskObj = {
+                id: Date.now(),
+                title: newTask,
+                completed: false,
+                priority: 'medium',
+                tags: [],
+                dueDate: new Date().toISOString().split('T')[0],
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString()
+              };
+
+              setTasks([newTaskObj, ...tasks]);
+              setNewTask('');
+              setShowAddForm(false);
+            }
+          };
+
+          // Toggle task completion
+          const toggleTask = (id) => {
+            const updatedTasks = tasks.map(task => {
+              if (task.id === id) {
+                const updatedTask = { ...task, completed: !task.completed, updatedAt: new Date().toISOString() };
+                return updatedTask;
+              }
+              return task;
+            });
+
+            setTasks(updatedTasks);
+          };
+
+          // Delete a task
+          const deleteTask = (id) => {
+            if (window.confirm('Are you sure you want to delete this task?')) {
+              const filteredTasks = tasks.filter(task => task.id !== id);
+              setTasks(filteredTasks);
+            }
+          };
+
+          // Import icons as inline SVGs with proper styling to match Lucide React
+          const PlusIcon = () => (
+            <svg className="icon-base icon-lg" viewBox="0 0 24 24">
+              <path d="M12 4v16m8-8H4"/>
+            </svg>
+          );
+
+          const CheckIcon = () => (
+            <svg className="icon-base icon-sm" viewBox="0 0 24 24">
+              <path d="M5 13l4 4L19 7"/>
+            </svg>
+          );
+
+          const Trash2Icon = () => (
+            <svg className="icon-base icon-sm" viewBox="0 0 24 24">
+              <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+            </svg>
+          );
+
+          const CalendarIcon = () => (
+            <svg className="icon-base icon-sm" viewBox="0 0 24 24">
+              <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          );
+
+          const SearchIcon = () => (
+            <svg className="icon-base icon-md" viewBox="0 0 24 24">
+              <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+          );
+
+          const MoonIcon = () => (
+            <svg className="icon-base icon-md" viewBox="0 0 24 24">
+              <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+            </svg>
+          );
+
+          const SunIcon = () => (
+            <svg className="icon-base icon-md" viewBox="0 0 24 24">
+              <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+            </svg>
+          );
+
+          const CheckCircle2Icon = () => (
+            <svg className="icon-base icon-xl" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          );
+
+          const StarIcon = () => (
+            <svg className="icon-base icon-2xl" viewBox="0 0 24 24">
+              <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+            </svg>
+          );
+
+          const CircleIcon = () => (
+            <svg className="icon-base icon-2xl" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+            </svg>
+          );
+
+          return (
+            <div className={`min-h-screen transition-all duration-700 ${darkMode ? 'dark' : ''}`}>
+              {/* Background with decorative blobs */}
+              <div className="gradient-bg min-h-screen relative overflow-hidden">
+                <div className="decorative-blob w-96 h-96 bg-purple-300 top-10 -left-20" style={{animationDelay: '0s'}}></div>
+                <div className="decorative-blob w-80 h-80 bg-pink-300 bottom-20 -right-20" style={{animationDelay: '7s'}}></div>
+                <div className="decorative-blob w-72 h-72 bg-purple-200 top-1/2 left-1/3" style={{animationDelay: '14s'}}></div>
+
+                <div className="relative z-10 container mx-auto px-4 py-8 max-w-5xl">
+                  {/* Header */}
+                  <div className="text-center mb-12 floating-animation">
+                    <div className="flex items-center justify-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-300 to-purple-400 flex items-center justify-center shadow-lg">
+                        <CheckCircle2Icon />
+                      </div>
+                      <h1 className="title-text text-5xl dark:text-white" style={{color: '#8D89A6'}}>
+                        Dream<span style={{color: '#E6C0E9'}}>Flow</span>
+                      </h1>
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-300 text-sm tracking-wide">
+                      Your elegant task companion
+                    </p>
+                  </div>
+
+                  {/* Dark Mode Toggle */}
+                  <button
+                    onClick={() => setDarkMode(!darkMode)}
+                    className="fixed top-6 right-6 w-12 h-12 rounded-full glass-effect flex items-center justify-center hover-lift shadow-lg ripple z-50"
+                  >
+                    {darkMode ? (
+                      <SunIcon />
+                    ) : (
+                      <MoonIcon />
+                    )}
+                  </button>
+
+                  {/* Stats Cards */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    {[
+                      { label: 'Total Tasks', value: stats.total, icon: CircleIcon, color: '#BFABCB' },
+                      { label: 'Completed', value: stats.completed, icon: CheckCircle2Icon, color: '#E6C0E9' },
+                      { label: 'Active', value: stats.active, icon: StarIcon, color: '#EAC8CA' }
+                    ].map((stat, idx) => (
+                      <div
+                        key={stat.label}
+                        className="stat-card glass-effect rounded-3xl p-6 hover-lift slide-in"
+                        style={{animationDelay: `${idx * 0.1}s`}}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 mb-1 uppercase tracking-wider font-medium">
+                              {stat.label}
+                            </p>
+                            <p className="text-4xl font-bold title-text" style={{color: stat.color}}>
+                              {stat.value}
+                            </p>
+                          </div>
+                          <div
+                            className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-md"
+                            style={{backgroundColor: stat.color + '30'}}
+                          >
+                            <stat.icon style={{color: stat.color}} />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Search and Filter Bar */}
+                  <div className="glass-effect rounded-3xl p-6 mb-8 slide-in" style={{animationDelay: '0.3s'}}>
+                    <div className="flex flex-col md:flex-row gap-4">
+                      <div className="flex-1 relative">
+                        <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+                          <SearchIcon style={{color: '#BFABCB'}} />
+                        </div>
+                        <input
+                          type="text"
+                          placeholder="Search your dreams..."
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-transparent bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow transition-all dark:text-white"
+                          style={{borderColor: 'transparent'}}
+                        />
+                      </div>
+                      <div className="flex gap-2">
+                        {['all', 'active', 'completed'].map((f) => (
+                          <button
+                            key={f}
+                            onClick={() => setFilter(f)}
+                            className={`px-6 py-3 rounded-2xl font-medium transition-all ripple capitalize ${
+                              filter === f
+                                ? 'button-gradient text-white shadow-lg'
+                                : 'bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50'
+                            }`}
+                            style={filter !== f ? {color: '#8D89A6'} : {}}
+                          >
+                            {f}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Add Task Button/Form */}
+                  {!showAddForm ? (
+                    <button
+                      onClick={() => setShowAddForm(true)}
+                      className="w-full glass-effect rounded-3xl p-6 mb-8 hover-lift flex items-center justify-center gap-3 ripple group slide-in"
+                      style={{animationDelay: '0.4s'}}
+                    >
+                      <div className="w-12 h-12 rounded-2xl button-gradient flex items-center justify-center shadow-lg">
+                        <PlusIcon />
+                      </div>
+                      <span className="text-lg font-semibold" style={{color: '#8D89A6'}}>
+                        Add a New Dream
+                      </span>
+                    </button>
+                  ) : (
+                    <div className="glass-effect rounded-3xl p-6 mb-8 task-enter">
+                      <div className="flex gap-3">
+                        <input
+                          type="text"
+                          placeholder="What's on your mind?"
+                          value={newTask}
+                          onChange={(e) => setNewTask(e.target.value)}
+                          onKeyPress={(e) => e.key === 'Enter' && addTask()}
+                          autoFocus
+                          className="flex-1 px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
+                          style={{borderColor: '#E6C0E9'}}
+                        />
+                        <button
+                          onClick={addTask}
+                          className="px-8 py-3 rounded-2xl button-gradient text-white font-semibold hover-lift shadow-lg ripple"
+                        >
+                          Add
+                        </button>
+                        <button
+                          onClick={() => setShowAddForm(false)}
+                          className="px-6 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50 ripple"
+                          style={{color: '#8D89A6'}}
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Tasks List */}
+                  <div className="space-y-4 smooth-scroll">
+                    {filteredTasks.length === 0 ? (
+                      <div className="glass-effect rounded-3xl p-12 text-center slide-in">
+                        <div className="w-24 h-24 rounded-3xl mx-auto mb-6 flex items-center justify-center" style={{backgroundColor: '#F2D5F8'}}>
+                          <CheckCircle2Icon style={{color: '#BFABCB'}} />
+                        </div>
+                        <p className="text-xl font-semibold mb-2" style={{color: '#8D89A6'}}>
+                          {searchQuery ? 'No tasks found' : filter === 'completed' ? 'No completed tasks yet' : 'Your canvas is blank'}
+                        </p>
+                        <p className="text-slate-500 dark:text-slate-400">
+                          {searchQuery ? 'Try a different search term' : 'Start by adding your first dream'}
+                        </p>
+                      </div>
+                    ) : (
+                      filteredTasks.map((task, idx) => (
+                        <div
+                          key={task.id}
+                          className={`glass-effect rounded-3xl p-6 hover-lift task-enter priority-${task.priority}`}
+                          style={{animationDelay: `${idx * 0.05}s`}}
+                        >
+                          <div className="flex items-start gap-4">
+                            <label className="checkbox-custom mt-1">
+                              <input
+                                type="checkbox"
+                                checked={task.completed}
+                                onChange={() => toggleTask(task.id)}
+                              />
+                              <div className="checkbox-mark">
+                                {task.completed && <CheckIcon />}
+                              </div>
+                            </label>
+
+                            <div className="flex-1">
+                              <h3
+                                className={`text-lg font-semibold mb-2 transition-all ${
+                                  task.completed ? 'line-through opacity-50' : ''
+                                }`}
+                                style={{color: darkMode ? '#F2D5F8' : '#8D89A6'}}
+                              >
+                                {task.title}
+                              </h3>
+                              <div className="flex flex-wrap items-center gap-3">
+                                {task.tags.map((tag) => (
+                                  <span key={tag} className="tag-pill">
+                                    {tag}
+                                  </span>
+                                ))}
+                                {task.dueDate && (
+                                  <div className="flex items-center gap-1 text-sm" style={{color: '#BFABCB'}}>
+                                    <CalendarIcon />
+                                    <span>{new Date(task.dueDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => deleteTask(task.id)}
+                                className="w-10 h-10 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-red-100 dark:hover:bg-red-900/30 flex items-center justify-center transition-all ripple group"
+                              >
+                                <Trash2Icon className="text-slate-400 group-hover:text-red-500 transition-colors" />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+
+                  {/* Footer */}
+                  <div className="text-center mt-12 py-6">
+                    <p className="text-sm" style={{color: '#BFABCB'}}>
+                      Made with ✨ for dreamers and doers
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        const rootElement = document.getElementById('root');
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<TodoApp />);
+    </script>
+</body>
+</html>

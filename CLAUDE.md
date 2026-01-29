@@ -1,7 +1,7 @@
 # Claude Code Instructions for Hackathon Todo
 
 ## Project Overview
-This is a **Spec-Driven Development** project where you (Claude Code via Qwen) generate all implementation code based on specifications.
+This is a **Spec-Driven Development** project where you (Claude Code via Qwen) generate all implementation code based on specifications, with OpenAI integration for advanced features.
 
 ## Your Role
 1. Read specifications from /specs/ folder
