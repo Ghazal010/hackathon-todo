@@ -1,10 +1,12 @@
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List, Optional
-import sqlite3
-import json
+from sqlmodel import Session, select
 from datetime import datetime
-from contextlib import contextmanager
+import json
+
+from database import get_session, create_tables
+from models import Task, TaskCreate, TaskUpdate, TaskResponse
 
 app = FastAPI(title="DreamFlow API", version="1.0.0")
 
@@ -17,21 +19,29 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# In-memory storage for tasks (using SQLite would be better for persistence)
-# But for simplicity in this implementation, we'll use a list
-tasks_db = [
-    {"id": 1, "title": "Design new landing page", "completed": False, "priority": "high", "tags": ["work"], "dueDate": "2024-02-15", "createdAt": "2024-01-29T10:30:00Z", "updatedAt": "2024-01-29T10:30:00Z"},
-    {"id": 2, "title": "Morning meditation", "completed": True, "priority": "medium", "tags": ["personal"], "dueDate": "2024-02-10", "createdAt": "2024-01-29T10:30:00Z", "updatedAt": "2024-01-29T10:30:00Z"},
-    {"id": 3, "title": "Grocery shopping", "completed": False, "priority": "low", "tags": ["errands"], "dueDate": "2024-02-12", "createdAt": "2024-01-29T10:30:00Z", "updatedAt": "2024-01-29T10:30:00Z"}
-]
+# Create tables on startup
+@app.on_event("startup")
+def on_startup():
+    create_tables()
 
-next_id = 4
+# Helper function to convert SQLAlchemy model to response model
+def task_to_response(task: Task) -> TaskResponse:
+    # Parse tags from JSON string to list
+    try:
+        tags_list = json.loads(task.tags) if task.tags else []
+    except json.JSONDecodeError:
+        tags_list = []
 
-def get_next_id():
-    global next_id
-    current_id = next_id
-    next_id += 1
-    return current_id
+    return TaskResponse(
+        id=task.id,
+        title=task.title,
+        completed=task.completed,
+        priority=task.priority,
+        tags=tags_list,
+        due_date=task.due_date,
+        created_at=task.created_at,
+        updated_at=task.updated_at
+    )
 
 @app.get("/")
 async def root():
@@ -40,163 +50,160 @@ async def root():
 @app.get("/api/tasks")
 async def get_tasks(
     filter_param: str = Query("all", alias="filter"),
-    search: str = Query("")
+    search: str = Query(""),
+    session: Session = Depends(get_session)
 ):
     """Get all tasks with optional filtering and search"""
-    filtered_tasks = tasks_db
+    statement = select(Task)
 
     # Apply search filter
     if search:
-        filtered_tasks = [
-            task for task in filtered_tasks
-            if search.lower() in task["title"].lower()
-        ]
+        statement = statement.where(Task.title.contains(search))
 
     # Apply status filter
     if filter_param == "active":
-        filtered_tasks = [task for task in filtered_tasks if not task["completed"]]
+        statement = statement.where(Task.completed == False)
     elif filter_param == "completed":
-        filtered_tasks = [task for task in filtered_tasks if task["completed"]]
+        statement = statement.where(Task.completed == True)
+
+    tasks = session.exec(statement).all()
+
+    # Convert to response format
+    task_responses = [task_to_response(task) for task in tasks]
 
     return {
         "success": True,
         "data": {
-            "tasks": filtered_tasks,
-            "total": len(filtered_tasks),
+            "tasks": task_responses,
+            "total": len(task_responses),
             "page": 1,
-            "limit": len(filtered_tasks)
+            "limit": len(task_responses)
         }
     }
 
 @app.post("/api/tasks")
-async def create_task(task_data: dict):
+async def create_task(task_data: TaskCreate, session: Session = Depends(get_session)):
     """Create a new task"""
-    global next_id
-
-    # Validate required fields
-    if not task_data.get("title"):
-        raise HTTPException(status_code=400, detail="Title is required")
-
-    title = task_data["title"]
-    priority = task_data.get("priority", "medium")
-    tags = task_data.get("tags", [])
-    due_date = task_data.get("dueDate", datetime.now().strftime("%Y-%m-%d"))
-
     # Validate priority
-    if priority not in ["high", "medium", "low"]:
+    if task_data.priority not in ["high", "medium", "low"]:
         raise HTTPException(status_code=400, detail="Priority must be high, medium, or low")
 
-    # Create new task
-    new_task = {
-        "id": get_next_id(),
-        "title": title,
-        "completed": False,
-        "priority": priority,
-        "tags": tags,
-        "dueDate": due_date,
-        "createdAt": datetime.now().isoformat(),
-        "updatedAt": datetime.now().isoformat()
-    }
+    # Convert tags list to JSON string
+    tags_json = json.dumps(task_data.tags) if task_data.tags else "[]"
 
-    tasks_db.append(new_task)
+    # Create new task
+    new_task = Task(
+        title=task_data.title,
+        completed=task_data.completed,
+        priority=task_data.priority,
+        tags=tags_json,
+        due_date=task_data.due_date
+    )
+
+    session.add(new_task)
+    session.commit()
+    session.refresh(new_task)
 
     return {
         "success": True,
-        "data": new_task,
+        "data": task_to_response(new_task),
         "message": "Task created successfully"
     }
 
 @app.get("/api/tasks/{task_id}")
-async def get_task(task_id: int):
+async def get_task(task_id: int, session: Session = Depends(get_session)):
     """Get a specific task by ID"""
-    task = next((t for t in tasks_db if t["id"] == task_id), None)
+    task = session.get(Task, task_id)
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
 
     return {
         "success": True,
-        "data": task
+        "data": task_to_response(task)
     }
 
 @app.put("/api/tasks/{task_id}")
-async def update_task(task_id: int, task_data: dict):
+async def update_task(
+    task_id: int,
+    task_data: TaskUpdate,
+    session: Session = Depends(get_session)
+):
     """Update a specific task by ID"""
-    task_index = next((i for i, t in enumerate(tasks_db) if t["id"] == task_id), None)
-    if task_index is None:
+    task = session.get(Task, task_id)
+    if not task:
         raise HTTPException(status_code=404, detail="Task not found")
 
     # Update task fields
-    updated_task = tasks_db[task_index].copy()
+    update_data = task_data.dict(exclude_unset=True)
+    for field, value in update_data.items():
+        if field == "tags" and value is not None:
+            # Convert tags list to JSON string
+            setattr(task, field, json.dumps(value))
+        else:
+            setattr(task, field, value)
 
-    if "title" in task_data:
-        updated_task["title"] = task_data["title"]
-    if "priority" in task_data:
-        if task_data["priority"] in ["high", "medium", "low"]:
-            updated_task["priority"] = task_data["priority"]
-    if "tags" in task_data:
-        updated_task["tags"] = task_data["tags"]
-    if "dueDate" in task_data:
-        updated_task["dueDate"] = task_data["dueDate"]
-    if "completed" in task_data:
-        updated_task["completed"] = task_data["completed"]
-
-    updated_task["updatedAt"] = datetime.now().isoformat()
-
-    tasks_db[task_index] = updated_task
+    task.updated_at = datetime.utcnow()
+    session.add(task)
+    session.commit()
+    session.refresh(task)
 
     return {
         "success": True,
-        "data": updated_task,
+        "data": task_to_response(task),
         "message": "Task updated successfully"
     }
 
 @app.delete("/api/tasks/{task_id}")
-async def delete_task(task_id: int):
+async def delete_task(task_id: int, session: Session = Depends(get_session)):
     """Delete a specific task by ID"""
-    global tasks_db
-
-    task = next((t for t in tasks_db if t["id"] == task_id), None)
+    task = session.get(Task, task_id)
     if not task:
         raise HTTPException(status_code=404, detail="Task not found")
 
-    tasks_db = [t for t in tasks_db if t["id"] != task_id]
+    session.delete(task)
+    session.commit()
 
     return {
         "success": True,
-        "data": task,
+        "data": task_to_response(task),
         "message": "Task deleted successfully"
     }
 
 @app.patch("/api/tasks/{task_id}/toggle-complete")
-async def toggle_task_completion(task_id: int):
+async def toggle_task_completion(
+    task_id: int,
+    session: Session = Depends(get_session)
+):
     """Toggle the completion status of a task"""
-    task_index = next((i for i, t in enumerate(tasks_db) if t["id"] == task_id), None)
-    if task_index is None:
+    task = session.get(Task, task_id)
+    if not task:
         raise HTTPException(status_code=404, detail="Task not found")
 
-    updated_task = tasks_db[task_index].copy()
-    updated_task["completed"] = not updated_task["completed"]
-    updated_task["updatedAt"] = datetime.now().isoformat()
-
-    tasks_db[task_index] = updated_task
+    task.completed = not task.completed
+    task.updated_at = datetime.utcnow()
+    session.add(task)
+    session.commit()
+    session.refresh(task)
 
     return {
         "success": True,
-        "data": updated_task,
+        "data": task_to_response(task),
         "message": "Task completion status updated"
     }
 
 @app.get("/api/tasks/stats")
-async def get_task_stats():
+async def get_task_stats(session: Session = Depends(get_session)):
     """Get task statistics"""
-    total = len(tasks_db)
-    completed = len([t for t in tasks_db if t["completed"]])
+    all_tasks = session.exec(select(Task)).all()
+
+    total = len(all_tasks)
+    completed = len([t for t in all_tasks if t.completed])
     active = total - completed
 
     by_priority = {
-        "high": len([t for t in tasks_db if t["priority"] == "high"]),
-        "medium": len([t for t in tasks_db if t["priority"] == "medium"]),
-        "low": len([t for t in tasks_db if t["priority"] == "low"])
+        "high": len([t for t in all_tasks if t.priority == "high"]),
+        "medium": len([t for t in all_tasks if t.priority == "medium"]),
+        "low": len([t for t in all_tasks if t.priority == "low"])
     }
 
     return {
