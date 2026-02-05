@@ -44,7 +44,8 @@ def get_session():
 
 # Function to create tables
 def create_tables():
-    from models import Task
+    from .models import Task
+    from .chat_models import Conversation, Message
     from sqlmodel import SQLModel
 
     SQLModel.metadata.create_all(engine)

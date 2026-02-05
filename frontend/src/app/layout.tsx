@@ -1,6 +1,7 @@
 import './globals.css'
 import './components/todo-styles.css'
 import type { Metadata } from 'next'
+import Header from './components/Header'
 
 export const metadata: Metadata = {
   title: 'DreamFlow - Beautiful Todo App',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        <main>{children}</main>
+      </body>
     </html>
   )
 }

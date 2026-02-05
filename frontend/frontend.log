@@ -1,0 +1,17 @@
+
+> dreamflow-frontend@0.1.0 dev
+> next dev
+
+   ▲ Next.js 14.0.0
+   - Local:        http://localhost:3000
+
+ ✓ Ready in 4.3s
+ ○ Compiling /page ...
+ ✓ Compiled /page in 6.2s (537 modules)
+ ✓ Compiled in 1060ms (295 modules)
+ ○ Compiling /chat/page ...
+ ✓ Compiled /chat/page in 888ms (531 modules)
+ ○ Compiling /not-found ...
+ ✓ Compiled /not-found in 506ms (536 modules)
+ ✓ Compiled in 1536ms (545 modules)
+ ✓ Compiled in 2.6s (545 modules)

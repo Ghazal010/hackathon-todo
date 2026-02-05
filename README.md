@@ -1,12 +1,13 @@
 # Hackathon Todo App with OpenAI Integration
 
-A todo application evolving from Python console app to cloud-native AI chatbot with OpenAI integration.
+A sophisticated full-stack AI-powered todo application featuring natural language processing, beautiful UI, and advanced task management capabilities.
 
 ## 🎯 Project Goals
 - Master Spec-Driven Development
 - Build progressively complex software
 - Learn cloud-native technologies
 - Integrate OpenAI for enhanced productivity
+- Create intuitive natural language task management
 
 ## 📅 Timeline
 
@@ -14,32 +15,30 @@ A todo application evolving from Python console app to cloud-native AI chatbot w
 |-------|-------------|----------|--------|
 | I | Python Console App | Dec 7, 2025 | ✅ Complete |
 | II | Full-Stack Web App | Dec 14, 2025 | ✅ Complete |
-| III | AI Chatbot (OpenAI) | Dec 21, 2025 | ⏳ Upcoming |
+| III | AI Chatbot (OpenAI) | Dec 21, 2025 | ✅ Complete |
 | IV | Local Kubernetes | Jan 4, 2026 | ⏳ Upcoming |
 | V | Cloud Deployment | Jan 18, 2026 | ⏳ Upcoming |
 
 ## 🛠️ Tech Stack
 
-### Phase 1
+### Backend
 - Python 3.13+
-- UV package manager
-- In-memory storage
-- OpenAI integration for AI features
+- FastAPI for API framework
+- SQLModel for database ORM
+- PostgreSQL (via Neon) for database
+- uvicorn for ASGI server
 
-### Phase 2
+### Frontend
 - Next.js 14 with App Router
 - TypeScript support
 - Tailwind CSS styling
 - Lucide React icons
 - Beautiful Purple-themed UI
-- Advanced task management features
-- Progress tracking and subtasks
-- Category and priority systems
-- Notification system
 
-### Phase 3-5
-- OpenAI GPT (instead of Gemini)
-- Kubernetes, Kafka, Dapr
+### AI Integration
+- OpenAI GPT-4o-mini for cost-effective processing
+- Function calling for task operations
+- Natural language processing for task management
 
 ## 🚀 Getting Started
 ```bash
@@ -47,138 +46,156 @@ A todo application evolving from Python console app to cloud-native AI chatbot w
 git clone https://github.com/Ghazal010/hackathon-todo.git
 cd hackathon-todo
 
-# Install dependencies with UV
-uv sync
+# Install dependencies
+npm install  # For frontend
 
-# Set up OpenAI configuration
-cp .env.example .env
-# Edit .env to add your OpenAI API keys
+# Set up environment configuration
+# Edit .env to add your OpenAI API key
+OPENAI_API_KEY="your_openai_api_key_here"
 
-# For Phase 1 (Console App):
-uv run python src/main.py
+# Start backend server
+cd src/backend
+python -m uvicorn main:app --host 0.0.0.0 --port 8000
 
-# For Phase 2 (Web App):
+# Start frontend server
 cd frontend
-npm install
 npm run dev
-# Visit http://localhost:3000
+# Visit http://localhost:3001 (or http://localhost:3000 if available)
 ```
 
-## ⚡ OpenAI Configuration for Minimal Usage
+## ⚡ OpenAI Configuration
 
-The application is configured to minimize API usage and stay within free tier limits:
+The application is optimized for cost-effective API usage:
 
-- **Model**: Uses `gpt-3.5-turbo` which is most economical
-- **Rate Limiting**: Limits requests to 3 per minute by default
-- **Token Limit**: Caps response tokens at 150 to control costs
-- **Key Rotation**: Automatically rotates between multiple API keys if provided
-- **Retry Logic**: Attempts retries with different keys if one fails
+- **Model**: Uses `gpt-4o-mini` for optimal cost/performance
+- **Token Limit**: Caps response tokens at 300 to control costs
+- **Temperature**: Set to 0.7 for balanced creativity/consistency
+- **Cost Control**: Designed to stay within reasonable usage limits
 
 ### Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `OPENAI_API_KEYS` | Comma-separated list of API keys for rotation | (none) |
-| `OPENAI_API_KEY` | Single API key (fallback if no multiple keys) | (none) |
-| `OPENAI_MODEL` | OpenAI model to use | `gpt-3.5-turbo` |
-| `OPENAI_TEMPERATURE` | Creativity level (0.0-1.0) | `0.3` |
-| `OPENAI_MAX_TOKENS` | Maximum tokens in response | `150` |
-| `OPENAI_RPM_LIMIT` | Requests per minute limit | `3` |
+| `OPENAI_API_KEY` | Your OpenAI API key | (required) |
+| `OPENAI_MODEL` | OpenAI model to use | `gpt-4o-mini` |
+| `OPENAI_MAX_TOKENS` | Maximum tokens in response | `300` |
+| `OPENAI_TEMPERATURE` | Creativity level (0.0-1.0) | `0.7` |
 
 ## 📋 Features
 
-### Phase 1: Basic Features
+### Core Task Management
 - ✅ Add Task
 - ✅ Delete Task
 - ✅ Update Task
 - ✅ View Tasks
 - ✅ Mark Complete
-- ✅ AI Task Improvement
-
-### Phase 2: Advanced Web Application
-- ✅ Beautiful UI with Purple Theme
-- ✅ Dark/Light Mode Toggle
-- ✅ Glass Morphism Effects
-- ✅ Smooth Animations
-- ✅ Category System (Personal, Work, Office, etc.)
-- ✅ Priority Levels (High, Medium, Low)
-- ✅ Due Dates and Creation Dates
+- ✅ Task Prioritization (High/Medium/Low)
+- ✅ Category Management (Personal, Work, Health, etc.)
+- ✅ Due Dates and Creation Tracking
 - ✅ Tags System
 - ✅ Recurring Tasks (Daily, Weekly, Monthly)
 - ✅ Progress Tracking (Percentage Completion)
 - ✅ Subtasks System
 - ✅ Notification Reminders
+
+### Advanced UI Features
+- ✅ Beautiful UI with Purple Theme
+- ✅ Dark/Light Mode Toggle
+- ✅ Glass Morphism Effects
+- ✅ Smooth Animations
 - ✅ Responsive Design
 - ✅ Search and Filtering
 - ✅ Statistics Dashboard
 - ✅ Advanced Task Management
 
 ### AI-Powered Features
-- **AI Task Enhancement**: Get suggestions to improve your task titles and descriptions
-- **Smart Task Analysis**: AI analyzes tasks for better structure and clarity
-- **Productivity Insights**: Get AI-powered tips based on your task patterns
+- ✅ Natural Language Task Creation
+- ✅ AI Chatbot for Task Management
+- ✅ Function Calling for Backend Operations
+- ✅ Conversational Task Management
+- ✅ Smart Task Suggestions
+- ✅ AI Task Enhancement: Get suggestions to improve your task titles and descriptions
+- ✅ Natural Language Processing for intuitive interaction
 
-## 🤖 AI Integration Details
+## 🤖 AI Chat Interface
 
-The application includes AI-powered features to help you optimize your tasks:
+The application includes a sophisticated AI chat interface that allows natural language interaction:
 
-1. **Add Task with AI**: Option to get AI suggestions when creating tasks
-2. **AI Task Improvement**: Select existing tasks to get improvement suggestions
-3. **Smart Suggestions**: AI provides structured recommendations for task refinement
+1. **Conversational Task Management**: Simply say "Add buy groceries to my list" to create tasks
+2. **Natural Language Processing**: AI understands context and intent
+3. **Function Calling**: AI can directly interact with backend to perform CRUD operations
+4. **Conversation History**: Maintains context across interactions
+5. **Real-time Feedback**: Instant responses to user requests
+
+### Available Commands
+- "Add [task] to my list" - Creates new tasks
+- "Show me my tasks" - Lists all tasks
+- "Mark task [ID] as complete" - Updates task status
+- "Delete task [ID]" - Removes tasks
+- "Update task [ID] to [new details]" - Modifies tasks
 
 ## 📖 Documentation
 - `constitution.md` - Core principles
 - `CLAUDE.md` - AI instructions
 - `specs/` - Feature specifications
-- `src/openai_config.py` - OpenAI integration module
-- `src/ai_features.py` - AI functionality
+- `src/backend/` - Backend API implementation
+- `src/backend/openai_client.py` - OpenAI integration
+- `frontend/src/app/chat/` - AI Chat interface
+- `WORK_SUMMARY.md` - Comprehensive work summary
 
-## 🎓 Spec-Driven Development
-1. Write specification
-2. Generate code with Claude Code (Qwen)
-3. Test & validate
-4. Refine if needed
-
-**Rule**: No manual coding allowed.
+## 🎓 Development Approach
+1. Specification-driven development
+2. AI-assisted coding with Claude Code
+3. Modern full-stack architecture
+4. API-first design
+5. Component-based UI development
 
 ## 💰 Cost Optimization Strategies
 
-1. **Multiple Key Rotation**: Distribute requests across multiple accounts
-2. **Conservative Token Usage**: Keep response lengths minimal
-3. **Rate Limiting**: Prevent API limit exceeded errors
-4. **Efficient Prompts**: Well-structured prompts for better results with fewer tokens
-5. **Fallback Handling**: Graceful degradation if API calls fail
+1. **Efficient Model Selection**: Using gpt-4o-mini for optimal cost
+2. **Token Limiting**: Controlling response lengths
+3. **Batch Operations**: Efficient API usage patterns
+4. **Caching**: Reducing redundant API calls
 
-## 🏆 Scoring
-- Phase I: 100 points
-- Phase II: 150 points
-- Phase III: 200 points
-- Phase IV: 250 points
-- Phase V: 300 points
-- **Total**: 1000 points
+## 🏆 Completed Features
+- **Phase I**: Console application with core task management
+- **Phase II**: Full-stack web application with beautiful UI
+- **Phase III**: AI chatbot with natural language processing
+- **Advanced UI**: Glass morphism, animations, dark mode
+- **Database Integration**: SQLModel with PostgreSQL
+- **API Design**: RESTful endpoints with proper error handling
+- **AI Integration**: OpenAI with function calling
+- **Chat Interface**: Natural language task management
+- **Deployment Ready**: Proper environment configuration
 
 ## 📦 Project Structure
 ```
 hackathon-todo/
-├── specs/                    # Specifications
-├── src/                      # Source code
-│   ├── openai_config.py       # OpenAI configuration
-│   ├── ai_features.py         # AI functionality
-│   ├── backend/               # Backend API
-│   └── frontend/              # Frontend application
-│       ├── src/
-│       │   ├── app/
-│       │   │   ├── components/ # React components
-│       │   │   │   └── TodoApp.tsx
-│       │   │   └── page.tsx
-│       │   └── globals.css
-│       ├── package.json
-│       ├── next.config.js
-│       ├── tailwind.config.js
-│       └── ...
-├── .env.example              # OpenAI configuration template
-├── constitution.md           # Core principles
-└── CLAUDE.md                 # AI instructions
+├── .env                         # Environment variables
+├── frontend/                    # Next.js frontend application
+│   ├── src/
+│   │   └── app/
+│   │       ├── components/      # React components
+│   │       ├── chat/            # AI chat interface
+│   │       │   └── components/  # Chat UI components
+│   │       └── layout.tsx       # Global layout with navigation
+│   ├── package.json
+│   ├── next.config.js
+│   └── tailwind.config.js
+├── src/
+│   ├── backend/                 # FastAPI backend
+│   │   ├── main.py             # Main API application
+│   │   ├── models.py           # Database models
+│   │   ├── database.py         # Database configuration
+│   │   ├── openai_client.py    # OpenAI integration
+│   │   ├── chat_routes.py      # AI chat API routes
+│   │   ├── chat_models.py      # Chat data models
+│   │   └── chat_queries.py     # Chat database operations
+│   ├── ai_features.py          # AI functionality
+│   └── task_manager.py         # Core task logic
+├── WORK_SUMMARY.md             # Comprehensive work summary
+├── constitution.md             # Core principles
+└── CLAUDE.md                   # AI instructions
 ```
 
 ---

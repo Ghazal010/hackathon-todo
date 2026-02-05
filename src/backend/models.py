@@ -11,7 +11,10 @@ class TaskBase(SQLModel):
     due_date: Optional[str] = None  # ISO date format
 
 class Task(TaskBase, table=True):
+    __tablename__ = "tasks"
+
     id: Optional[int] = Field(default=None, primary_key=True)
+    user_id: str = Field(default="default_user", max_length=255, index=True)  # Add user_id field
     created_at: datetime = Field(default_factory=datetime.utcnow)
     updated_at: datetime = Field(default_factory=datetime.utcnow)
 

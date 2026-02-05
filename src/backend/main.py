@@ -5,8 +5,9 @@ from sqlmodel import Session, select
 from datetime import datetime
 import json
 
-from database import get_session, create_tables
-from models import Task, TaskCreate, TaskUpdate, TaskResponse
+from .database import get_session, create_tables
+from .models import Task, TaskCreate, TaskUpdate, TaskResponse
+from .chat_routes import router as chat_router
 
 app = FastAPI(title="DreamFlow API", version="1.0.0")
 
@@ -24,12 +25,15 @@ app.add_middleware(
 def on_startup():
     create_tables()
 
+# Register chat routes
+app.include_router(chat_router)
+
 # Helper function to convert SQLAlchemy model to response model
 def task_to_response(task: Task) -> TaskResponse:
     # Parse tags from JSON string to list
     try:
         tags_list = json.loads(task.tags) if task.tags else []
-    except json.JSONDecodeError:
+    except (json.JSONDecodeError, TypeError):
         tags_list = []
 
     return TaskResponse(
@@ -55,6 +59,9 @@ async def get_tasks(
 ):
     """Get all tasks with optional filtering and search"""
     statement = select(Task)
+
+    # Filter by user_id (temporary - will be replaced with actual user from auth)
+    statement = statement.where(Task.user_id == "default_user")
 
     # Apply search filter
     if search:
@@ -91,13 +98,14 @@ async def create_task(task_data: TaskCreate, session: Session = Depends(get_sess
     # Convert tags list to JSON string
     tags_json = json.dumps(task_data.tags) if task_data.tags else "[]"
 
-    # Create new task
+    # Create new task with default user_id for now (will be replaced with actual auth later)
     new_task = Task(
         title=task_data.title,
         completed=task_data.completed,
         priority=task_data.priority,
         tags=tags_json,
-        due_date=task_data.due_date
+        due_date=task_data.due_date,
+        user_id="default_user"  # Temporary - will be replaced with actual user from auth
     )
 
     session.add(new_task)
@@ -113,8 +121,9 @@ async def create_task(task_data: TaskCreate, session: Session = Depends(get_sess
 @app.get("/api/tasks/{task_id}")
 async def get_task(task_id: int, session: Session = Depends(get_session)):
     """Get a specific task by ID"""
+    # Filter by user_id as well
     task = session.get(Task, task_id)
-    if not task:
+    if not task or task.user_id != "default_user":  # Temporary user filter
         raise HTTPException(status_code=404, detail="Task not found")
 
     return {
@@ -130,7 +139,7 @@ async def update_task(
 ):
     """Update a specific task by ID"""
     task = session.get(Task, task_id)
-    if not task:
+    if not task or task.user_id != "default_user":  # Temporary user filter
         raise HTTPException(status_code=404, detail="Task not found")
 
     # Update task fields
@@ -157,7 +166,7 @@ async def update_task(
 async def delete_task(task_id: int, session: Session = Depends(get_session)):
     """Delete a specific task by ID"""
     task = session.get(Task, task_id)
-    if not task:
+    if not task or task.user_id != "default_user":  # Temporary user filter
         raise HTTPException(status_code=404, detail="Task not found")
 
     session.delete(task)
@@ -176,7 +185,7 @@ async def toggle_task_completion(
 ):
     """Toggle the completion status of a task"""
     task = session.get(Task, task_id)
-    if not task:
+    if not task or task.user_id != "default_user":  # Temporary user filter
         raise HTTPException(status_code=404, detail="Task not found")
 
     task.completed = not task.completed
@@ -194,7 +203,8 @@ async def toggle_task_completion(
 @app.get("/api/tasks/stats")
 async def get_task_stats(session: Session = Depends(get_session)):
     """Get task statistics"""
-    all_tasks = session.exec(select(Task)).all()
+    # Filter by user_id
+    all_tasks = session.exec(select(Task).where(Task.user_id == "default_user")).all()
 
     total = len(all_tasks)
     completed = len([t for t in all_tasks if t.completed])
