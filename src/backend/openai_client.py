@@ -236,6 +236,9 @@ def execute_function(
                 due_date=arguments.get("description")
             )
 
+            # Convert user_id to integer for the new schema
+            user_id_int = int(user_id)
+
             # Create task object with user_id
             new_task = Task(
                 title=task_create_data.title,
@@ -243,7 +246,7 @@ def execute_function(
                 priority=task_create_data.priority,
                 tags=json.dumps(task_create_data.tags) if task_create_data.tags else "[]",
                 due_date=task_create_data.due_date,
-                user_id=user_id  # Use the user_id passed to the function
+                user_id=user_id_int  # Use the converted user_id
             )
 
             db.add(new_task)
@@ -265,8 +268,11 @@ def execute_function(
 
             status = arguments.get("status", "all")
 
+            # Convert user_id to integer for the new schema
+            user_id_int = int(user_id)
+
             # Build query based on status and user_id
-            query = select(Task).where(Task.user_id == user_id)
+            query = select(Task).where(Task.user_id == user_id_int)
 
             if status == "pending":
                 query = query.where(Task.completed == False)
@@ -294,8 +300,11 @@ def execute_function(
             from .main import task_to_response
             from sqlmodel import select
 
+            # Convert user_id to integer for the new schema
+            user_id_int = int(user_id)
+
             # Find task by ID and user_id
-            query = select(Task).where(Task.id == arguments["task_id"]).where(Task.user_id == user_id)
+            query = select(Task).where(Task.id == arguments["task_id"]).where(Task.user_id == user_id_int)
             task = db.exec(query).first()
 
             if not task:
@@ -326,8 +335,11 @@ def execute_function(
             from .main import task_to_response
             from sqlmodel import select
 
+            # Convert user_id to integer for the new schema
+            user_id_int = int(user_id)
+
             # Find task by ID and user_id
-            query = select(Task).where(Task.id == arguments["task_id"]).where(Task.user_id == user_id)
+            query = select(Task).where(Task.id == arguments["task_id"]).where(Task.user_id == user_id_int)
             task = db.exec(query).first()
 
             if not task:
@@ -361,8 +373,11 @@ def execute_function(
             from .main import task_to_response
             from sqlmodel import select
 
+            # Convert user_id to integer for the new schema
+            user_id_int = int(user_id)
+
             # Find task by ID and user_id
-            query = select(Task).where(Task.id == arguments["task_id"]).where(Task.user_id == user_id)
+            query = select(Task).where(Task.id == arguments["task_id"]).where(Task.user_id == user_id_int)
             task = db.exec(query).first()
 
             if not task:

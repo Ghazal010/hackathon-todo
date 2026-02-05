@@ -1,9 +1,33 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useAuth } from '@/app/context/AuthContext';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import ChatInterface from './components/ChatInterface';
 
 export default function ChatPage() {
+  const { isAuthenticated } = useAuth();
+  const router = useRouter();
+
+  // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
+
+  // Only render if authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-center">
+          <p>Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-100">
       <div className="container mx-auto px-4 py-8">

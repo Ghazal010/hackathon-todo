@@ -1,18 +1,20 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlmodel import Session
 from typing import List, Dict, Any
+from .models import User
 
 from .chat_models import ChatRequest, ChatResponse, ToolCall
 from .database import get_session
 from .chat_queries import create_conversation, get_conversation, get_conversation_history, add_message
 from .openai_client import chat_with_ai, execute_function, get_final_response
+from .auth import get_current_active_user
 
 router = APIRouter(prefix="/api", tags=["chat"])
 
-@router.post("/{user_id}/chat", response_model=ChatResponse)
+@router.post("/chat", response_model=ChatResponse)
 async def chat(
-    user_id: str,
     request: ChatRequest,
+    current_user: User = Depends(get_current_active_user),
     db: Session = Depends(get_session)
 ):
     """
@@ -29,15 +31,17 @@ async def chat(
     """
 
     try:
+        user_id = current_user.id
+
         # Step 1: Get or create conversation
         if request.conversation_id:
             conversation = get_conversation(
                 db, request.conversation_id
             )
-            if not conversation or conversation.user_id != user_id:
+            if not conversation or conversation.user_id != str(user_id):
                 raise HTTPException(404, "Conversation not found")
         else:
-            conversation = create_conversation(db, user_id)
+            conversation = create_conversation(db, str(user_id))
 
         # Step 2: Fetch conversation history (last 10 messages)
         history = get_conversation_history(
@@ -54,7 +58,7 @@ async def chat(
         messages.append({"role": "user", "content": request.message})
 
         # Step 3: Send to OpenAI
-        ai_response = chat_with_ai(messages, user_id)
+        ai_response = chat_with_ai(messages, str(user_id))
 
         # Step 4: Execute function calls (if any)
         tool_calls = []
@@ -65,7 +69,7 @@ async def chat(
                 result = execute_function(
                     function_name=tool_call["function"],
                     arguments=tool_call["arguments"],
-                    user_id=user_id,
+                    user_id=str(user_id),
                     db=db
                 )
 
@@ -91,7 +95,7 @@ async def chat(
         user_msg = add_message(
             db=db,
             conversation_id=conversation.id,
-            user_id=user_id,
+            user_id=str(user_id),
             role="user",
             content=request.message
         )
@@ -100,7 +104,7 @@ async def chat(
         ai_msg = add_message(
             db=db,
             conversation_id=conversation.id,
-            user_id=user_id,
+            user_id=str(user_id),
             role="assistant",
             content=final_response,
             tool_calls={"calls": tool_calls} if tool_calls else None

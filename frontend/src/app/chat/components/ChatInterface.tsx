@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useAuth } from '@/app/context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 interface Message {
   id: number;
@@ -16,6 +18,15 @@ export default function ChatInterface() {
   const [loading, setLoading] = useState(false);
   const [conversationId, setConversationId] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { isAuthenticated } = useAuth();
+  const router = useRouter();
+
+  // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -26,7 +37,7 @@ export default function ChatInterface() {
   }, [messages]);
 
   const sendMessage = async () => {
-    if (!input.trim() || loading) return;
+    if (!input.trim() || loading || !isAuthenticated) return;
 
     // Add user message
     const userMessage: Message = {
@@ -41,11 +52,19 @@ export default function ChatInterface() {
     setLoading(true);
 
     try {
+      // Get the auth token
+      const token = localStorage.getItem('access_token');
+
+      if (!token) {
+        throw new Error('Authentication token not found');
+      }
+
       // Call the chat API on backend server
-      const response = await fetch(`http://localhost:8000/api/${localStorage.getItem('user_id') || 'demo@example.com'}/chat`, {
+      const response = await fetch('http://localhost:8000/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
         },
         body: JSON.stringify({
           message: input,
@@ -54,6 +73,11 @@ export default function ChatInterface() {
       });
 
       if (!response.ok) {
+        if (response.status === 401) {
+          // Unauthorized - redirect to login
+          router.push('/login');
+          return;
+        }
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 

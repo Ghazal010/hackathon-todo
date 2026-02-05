@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Plus, Check, Trash2, Calendar, Search, Filter, Star, Moon, Sun, Circle, CheckCircle2, Clock } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 interface Task {
   id: number;
@@ -17,6 +19,7 @@ interface Task {
   subtasks: Subtask[]; // Array of subtasks
   notifyBefore: number | null; // Minutes before deadline to notify
   updatedAt?: string;
+  user_id: number;
 }
 
 interface Subtask {
@@ -26,6 +29,26 @@ interface Subtask {
 }
 
 export default function TodoApp() {
+  const { isAuthenticated } = useAuth();
+  const router = useRouter();
+
+  // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login');
+    }
+  }, [isAuthenticated, router]);
+
+  // Only render if authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-center">
+          <p>Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
   const [tasks, setTasks] = useState<Task[]>([
     { id: 1, title: 'Design new landing page', completed: false, priority: 'high', tags: ['work'], dueDate: '2024-02-15', category: 'work', createdAt: '2024-01-29', recurring: null, progress: 30, subtasks: [{id: '1', title: 'Research design trends', completed: true}, {id: '2', title: 'Create wireframes', completed: false}], notifyBefore: 30 },
     { id: 2, title: 'Morning meditation', completed: true, priority: 'medium', tags: ['personal'], dueDate: '2024-02-10', category: 'personal', createdAt: '2024-01-29', recurring: 'daily', progress: 100, subtasks: [], notifyBefore: null },

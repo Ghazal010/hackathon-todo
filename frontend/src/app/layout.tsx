@@ -2,6 +2,7 @@ import './globals.css'
 import './components/todo-styles.css'
 import type { Metadata } from 'next'
 import Header from './components/Header'
+import { AuthProvider } from './context/AuthContext'
 
 export const metadata: Metadata = {
   title: 'DreamFlow - Beautiful Todo App',
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main>{children}</main>
+        <AuthProvider>
+          <Header />
+          <main>{children}</main>
+        </AuthProvider>
       </body>
     </html>
   )
