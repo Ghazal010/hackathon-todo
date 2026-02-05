@@ -1,6 +1,6 @@
-# Hackathon Todo App with OpenAI Integration
+# Hackathon Todo App with OpenAI Integration & Authentication
 
-A sophisticated full-stack AI-powered todo application featuring natural language processing, beautiful UI, and advanced task management capabilities.
+A sophisticated full-stack AI-powered todo application featuring user authentication, natural language processing, beautiful UI, and advanced task management capabilities.
 
 ## 🎯 Project Goals
 - Master Spec-Driven Development
@@ -53,14 +53,15 @@ npm install  # For frontend
 # Edit .env to add your OpenAI API key
 OPENAI_API_KEY="your_openai_api_key_here"
 
-# Start backend server
+# Start backend server (handles authentication and API)
 cd src/backend
 python -m uvicorn main:app --host 0.0.0.0 --port 8000
 
-# Start frontend server
+# Start frontend server (includes login/signup)
 cd frontend
 npm run dev
 # Visit http://localhost:3001 (or http://localhost:3000 if available)
+# Register a new account or login to access the dashboard
 ```
 
 ## ⚡ OpenAI Configuration
@@ -134,6 +135,16 @@ The application includes a sophisticated AI chat interface that allows natural l
 - "Delete task [ID]" - Removes tasks
 - "Update task [ID] to [new details]" - Modifies tasks
 
+## 🔐 Authentication System
+
+The application now includes a complete user authentication system:
+
+1. **User Registration**: Create new accounts with email and password
+2. **Secure Login**: JWT-based authentication with password hashing
+3. **Protected Routes**: All task data is user-specific and secured
+4. **User Isolation**: Each user sees only their own tasks and data
+5. **Session Management**: Automatic token handling and refresh
+
 ## 📖 Documentation
 - `constitution.md` - Core principles
 - `CLAUDE.md` - AI instructions
@@ -166,6 +177,8 @@ The application includes a sophisticated AI chat interface that allows natural l
 - **API Design**: RESTful endpoints with proper error handling
 - **AI Integration**: OpenAI with function calling
 - **Chat Interface**: Natural language task management
+- **Authentication System**: User registration and login with JWT tokens
+- **User Management**: Protected routes and user-specific data isolation
 - **Deployment Ready**: Proper environment configuration
 
 ## 📦 Project Structure
@@ -178,15 +191,18 @@ hackathon-todo/
 │   │       ├── components/      # React components
 │   │       ├── chat/            # AI chat interface
 │   │       │   └── components/  # Chat UI components
+│   │       ├── login/           # Login page
+│   │       ├── signup/          # Signup page
 │   │       └── layout.tsx       # Global layout with navigation
 │   ├── package.json
 │   ├── next.config.js
 │   └── tailwind.config.js
 ├── src/
 │   ├── backend/                 # FastAPI backend
-│   │   ├── main.py             # Main API application
-│   │   ├── models.py           # Database models
+│   │   ├── main.py             # Main API application with auth routes
+│   │   ├── models.py           # Database models (including User model)
 │   │   ├── database.py         # Database configuration
+│   │   ├── auth.py             # Authentication utilities
 │   │   ├── openai_client.py    # OpenAI integration
 │   │   ├── chat_routes.py      # AI chat API routes
 │   │   ├── chat_models.py      # Chat data models
