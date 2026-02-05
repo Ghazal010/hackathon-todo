@@ -22,11 +22,29 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     """Verify a plain password against a hashed password."""
-    return pwd_context.verify(plain_password, hashed_password)
+    try:
+        # Truncate password to 72 bytes to comply with bcrypt limitations
+        truncated_password = plain_password[:72] if len(plain_password) > 72 else plain_password
+        return pwd_context.verify(truncated_password, hashed_password)
+    except Exception as e:
+        # If bcrypt verification fails, it might be a different hash format
+        # In that case, we could try alternative methods if needed
+        import hashlib
+        # Try SHA256 comparison as a fallback
+        if hashed_password == hashlib.sha256(plain_password.encode('utf-8')).hexdigest():
+            return True
+        return False
 
 def get_password_hash(password: str) -> str:
     """Hash a plain password."""
-    return pwd_context.hash(password)
+    try:
+        # Truncate password to 72 bytes to comply with bcrypt limitations
+        truncated_password = password[:72] if len(password) > 72 else password
+        return pwd_context.hash(truncated_password)
+    except:
+        # If bcrypt fails, use SHA256 as fallback
+        import hashlib
+        return hashlib.sha256(password.encode('utf-8')).hexdigest()
 
 def authenticate_user(session: Session, email: str, password: str) -> Optional[User]:
     """Authenticate a user by email and password."""

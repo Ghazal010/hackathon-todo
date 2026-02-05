@@ -31,30 +31,10 @@ interface Subtask {
 export default function TodoApp() {
   const { isAuthenticated } = useAuth();
   const router = useRouter();
+  const [tasks, setTasks] = useState<Task[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  // Redirect to login if not authenticated
-  useEffect(() => {
-    if (!isAuthenticated) {
-      router.push('/login');
-    }
-  }, [isAuthenticated, router]);
-
-  // Only render if authenticated
-  if (!isAuthenticated) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="text-center">
-          <p>Redirecting to login...</p>
-        </div>
-      </div>
-    );
-  }
-  const [tasks, setTasks] = useState<Task[]>([
-    { id: 1, title: 'Design new landing page', completed: false, priority: 'high', tags: ['work'], dueDate: '2024-02-15', category: 'work', createdAt: '2024-01-29', recurring: null, progress: 30, subtasks: [{id: '1', title: 'Research design trends', completed: true}, {id: '2', title: 'Create wireframes', completed: false}], notifyBefore: 30 },
-    { id: 2, title: 'Morning meditation', completed: true, priority: 'medium', tags: ['personal'], dueDate: '2024-02-10', category: 'personal', createdAt: '2024-01-29', recurring: 'daily', progress: 100, subtasks: [], notifyBefore: null },
-    { id: 3, title: 'Grocery shopping', completed: false, priority: 'low', tags: ['errands'], dueDate: '2024-02-12', category: 'errands', createdAt: '2024-01-29', recurring: null, progress: 0, subtasks: [], notifyBefore: 60 }
-  ]);
-
+  // State for form inputs
   const [newTask, setNewTask] = useState('');
   const [newTaskCategory, setNewTaskCategory] = useState('personal');
   const [newTaskDueDate, setNewTaskDueDate] = useState('');
@@ -70,6 +50,72 @@ export default function TodoApp() {
   const [searchQuery, setSearchQuery] = useState('');
   const [darkMode, setDarkMode] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
+
+  // Redirect to login if not authenticated
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push('/login');
+    } else {
+      // Load tasks for authenticated user
+      fetchTasks();
+    }
+  }, [isAuthenticated, router]);
+
+  const fetchTasks = async () => {
+    try {
+      setLoading(true);
+      const token = localStorage.getItem('access_token');
+
+      if (!token) {
+        router.push('/login');
+        return;
+      }
+
+      const response = await fetch('http://localhost:8000/api/tasks', {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+
+      if (!response.ok) {
+        if (response.status === 401) {
+          router.push('/login');
+          return;
+        }
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setTasks(data.data.tasks || []);
+    } catch (error) {
+      console.error('Error fetching tasks:', error);
+      // Set to empty array on error but continue to show UI
+      setTasks([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Only render if authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-center">
+          <p>Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-center">
+          <p>Loading your tasks...</p>
+        </div>
+      </div>
+    );
+  }
 
   const addTask = () => {
     if (newTask.trim()) {

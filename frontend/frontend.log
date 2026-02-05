@@ -26,3 +26,3177 @@
  ✓ Compiled in 1864ms (563 modules)
  ✓ Compiled in 1285ms (563 modules)
  ✓ Compiled in 1463ms (563 modules)
+ ✓ Compiled in 4.7s (563 modules)
+ ✓ Compiled in 2.1s (552 modules)
+[Error: ENOENT: no such file or directory, stat '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'
+}
+[Error: ENOENT: no such file or directory, stat '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat '/Users/user/Desktop/hackathon-todo/frontend/.next/cache/webpack/server-development/3.pack.gz'
+ ✓ Compiled in 4.2s (301 modules)
+ ✓ Compiled in 3.2s (301 modules)
+ ✓ Compiled in 4.7s (536 modules)
+ ✓ Compiled in 757ms (536 modules)
+ ✓ Compiled in 510ms (288 modules)
+ ✓ Compiled in 543ms (288 modules)
+ ✓ Compiled in 1526ms (554 modules)
+ ⨯ ./src/app/HomePage.tsx:3:0
+Module not found: Can't resolve '../context/AuthContext'
+[0m [90m 1 |[39m [32m'use client'[39m[33m;[39m[0m
+[0m [90m 2 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { useAuth } [36mfrom[39m [32m'../context/AuthContext'[39m[33m;[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { useEffect } [36mfrom[39m [32m'react'[39m[33m;[39m[0m
+[0m [90m 5 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/navigation'[39m[33m;[39m[0m
+[0m [90m 6 |[39m [36mimport[39m [33mTodoApp[39m [36mfrom[39m [32m'./components/TodoApp'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./src/app/HomePage.tsx:3:0
+Module not found: Can't resolve '../context/AuthContext'
+[0m [90m 1 |[39m [32m'use client'[39m[33m;[39m[0m
+[0m [90m 2 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { useAuth } [36mfrom[39m [32m'../context/AuthContext'[39m[33m;[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { useEffect } [36mfrom[39m [32m'react'[39m[33m;[39m[0m
+[0m [90m 5 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/navigation'[39m[33m;[39m[0m
+[0m [90m 6 |[39m [36mimport[39m [33mTodoApp[39m [36mfrom[39m [32m'../components/TodoApp'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+ ✓ Compiled in 1481ms (536 modules)
+ ✓ Compiled in 289ms (288 modules)
+ ✓ Compiled in 1257ms (552 modules)
+ ✓ Compiled in 979ms (301 modules)
+ ✓ Compiled in 475ms (301 modules)
+ ✓ Compiled in 1415ms (554 modules)
+ ⨯ ./src/app/TodoWrapper.tsx:3:0
+Module not found: Can't resolve '../context/AuthContext'
+[0m [90m 1 |[39m [32m'use client'[39m[33m;[39m[0m
+[0m [90m 2 |[39m[0m
+[0m[31m[1m>[22m[39m[90m 3 |[39m [36mimport[39m { useAuth } [36mfrom[39m [32m'../context/AuthContext'[39m[33m;[39m[0m
+[0m [90m 4 |[39m [36mimport[39m { useEffect } [36mfrom[39m [32m'react'[39m[33m;[39m[0m
+[0m [90m 5 |[39m [36mimport[39m { useRouter } [36mfrom[39m [32m'next/navigation'[39m[33m;[39m[0m
+[0m [90m 6 |[39m [36mimport[39m [33mTodoApp[39m [36mfrom[39m [32m'../components/TodoApp'[39m[33m;[39m[0m
+
+https://nextjs.org/docs/messages/module-not-found
+ ✓ Compiled in 1258ms (536 modules)
+ ✓ Compiled in 1079ms (288 modules)
+ ✓ Compiled in 566ms (288 modules)
+ ✓ Compiled in 992ms (288 modules)
+ ✓ Compiled in 1830ms (528 modules)
+ ✓ Compiled in 743ms (289 modules)
+ ✓ Compiled in 2.3s (536 modules)
+ ✓ Compiled in 1140ms (522 modules)
+ ✓ Compiled in 3.2s (288 modules)
+ ✓ Compiled in 2.5s (288 modules)
+ ⨯ ./src/app/components/TodoApp.tsx
+Error: 
+  [31mx[0m the name `tasks` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:31:1]
+ [2m 31[0m | export default function TodoApp() {
+ [2m 32[0m |   const { isAuthenticated } = useAuth();
+ [2m 33[0m |   const router = useRouter();
+ [2m 34[0m |   const [tasks, setTasks] = useState<Task[]>([]);
+     : [31;1m         ^^|^^[0m
+     :            [31;1m`-- [31;1mprevious definition of `tasks` here[0m[0m
+ [2m 35[0m |   const [loading, setLoading] = useState(true);
+ [2m 36[0m | 
+ [2m 37[0m |   // Redirect to login if not authenticated
+ [2m 38[0m |   useEffect(() => {
+ [2m 39[0m |     if (!isAuthenticated) {
+ [2m 40[0m |       router.push('/login');
+ [2m 41[0m |     } else {
+ [2m 42[0m |       // Load tasks for authenticated user
+ [2m 43[0m |       fetchTasks();
+ [2m 44[0m |     }
+ [2m 45[0m |   }, [isAuthenticated, router]);
+ [2m 46[0m | 
+ [2m 47[0m |   const fetchTasks = async () => {
+ [2m 48[0m |     try {
+ [2m 49[0m |       setLoading(true);
+ [2m 50[0m |       const token = localStorage.getItem('access_token');
+ [2m 51[0m | 
+ [2m 52[0m |       if (!token) {
+ [2m 53[0m |         router.push('/login');
+ [2m 54[0m |         return;
+ [2m 55[0m |       }
+ [2m 56[0m | 
+ [2m 57[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 58[0m |         headers: {
+ [2m 59[0m |           'Authorization': `Bearer ${token}`,
+ [2m 60[0m |         },
+ [2m 61[0m |       });
+ [2m 62[0m | 
+ [2m 63[0m |       if (!response.ok) {
+ [2m 64[0m |         if (response.status === 401) {
+ [2m 65[0m |           router.push('/login');
+ [2m 66[0m |           return;
+ [2m 67[0m |         }
+ [2m 68[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 69[0m |       }
+ [2m 70[0m | 
+ [2m 71[0m |       const data = await response.json();
+ [2m 72[0m |       setTasks(data.data.tasks || []);
+ [2m 73[0m |     } catch (error) {
+ [2m 74[0m |       console.error('Error fetching tasks:', error);
+ [2m 75[0m |       // Set to empty array on error but continue to show UI
+ [2m 76[0m |       setTasks([]);
+ [2m 77[0m |     } finally {
+ [2m 78[0m |       setLoading(false);
+ [2m 79[0m |     }
+ [2m 80[0m |   };
+ [2m 81[0m | 
+ [2m 82[0m |   // Only render if authenticated
+ [2m 83[0m |   if (!isAuthenticated) {
+ [2m 84[0m |     return (
+ [2m 85[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m 86[0m |         <div className="text-center">
+ [2m 87[0m |           <p>Redirecting to login...</p>
+ [2m 88[0m |         </div>
+ [2m 89[0m |       </div>
+ [2m 90[0m |     );
+ [2m 91[0m |   }
+ [2m 92[0m | 
+ [2m 93[0m |   if (loading) {
+ [2m 94[0m |     return (
+ [2m 95[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m 96[0m |         <div className="text-center">
+ [2m 97[0m |           <p>Loading your tasks...</p>
+ [2m 98[0m |         </div>
+ [2m 99[0m |       </div>
+ [2m100[0m |     );
+ [2m101[0m |   }
+ [2m102[0m |   const [tasks, setTasks] = useState<Task[]>([
+     : [33;1m         ^^|^^[0m
+     :            [33;1m`-- [33;1m`tasks` redefined here[0m[0m
+ [2m103[0m |     { id: 1, title: 'Design new landing page', completed: false, priority: 'high', tags: ['work'], dueDate: '2024-02-15', category: 'work', createdAt: '2024-01-29', recurring: null, progress: 30, subtasks: [{id: '1', title: 'Research design trends', completed: true}, {id: '2', title: 'Create wireframes', completed: false}], notifyBefore: 30, user_id: 1 },
+ [2m104[0m |     { id: 2, title: 'Morning meditation', completed: true, priority: 'medium', tags: ['personal'], dueDate: '2024-02-10', category: 'personal', createdAt: '2024-01-29', recurring: 'daily', progress: 100, subtasks: [], notifyBefore: null, user_id: 1 },
+ [2m105[0m |     { id: 3, title: 'Grocery shopping', completed: false, priority: 'low', tags: ['errands'], dueDate: '2024-02-12', category: 'errands', createdAt: '2024-01-29', recurring: null, progress: 0, subtasks: [], notifyBefore: 60, user_id: 1 }
+     `----
+
+  [31mx[0m the name `setTasks` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:31:1]
+ [2m 31[0m | export default function TodoApp() {
+ [2m 32[0m |   const { isAuthenticated } = useAuth();
+ [2m 33[0m |   const router = useRouter();
+ [2m 34[0m |   const [tasks, setTasks] = useState<Task[]>([]);
+     : [31;1m                ^^^^|^^^[0m
+     :                     [31;1m`-- [31;1mprevious definition of `setTasks` here[0m[0m
+ [2m 35[0m |   const [loading, setLoading] = useState(true);
+ [2m 36[0m | 
+ [2m 37[0m |   // Redirect to login if not authenticated
+ [2m 38[0m |   useEffect(() => {
+ [2m 39[0m |     if (!isAuthenticated) {
+ [2m 40[0m |       router.push('/login');
+ [2m 41[0m |     } else {
+ [2m 42[0m |       // Load tasks for authenticated user
+ [2m 43[0m |       fetchTasks();
+ [2m 44[0m |     }
+ [2m 45[0m |   }, [isAuthenticated, router]);
+ [2m 46[0m | 
+ [2m 47[0m |   const fetchTasks = async () => {
+ [2m 48[0m |     try {
+ [2m 49[0m |       setLoading(true);
+ [2m 50[0m |       const token = localStorage.getItem('access_token');
+ [2m 51[0m | 
+ [2m 52[0m |       if (!token) {
+ [2m 53[0m |         router.push('/login');
+ [2m 54[0m |         return;
+ [2m 55[0m |       }
+ [2m 56[0m | 
+ [2m 57[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 58[0m |         headers: {
+ [2m 59[0m |           'Authorization': `Bearer ${token}`,
+ [2m 60[0m |         },
+ [2m 61[0m |       });
+ [2m 62[0m | 
+ [2m 63[0m |       if (!response.ok) {
+ [2m 64[0m |         if (response.status === 401) {
+ [2m 65[0m |           router.push('/login');
+ [2m 66[0m |           return;
+ [2m 67[0m |         }
+ [2m 68[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 69[0m |       }
+ [2m 70[0m | 
+ [2m 71[0m |       const data = await response.json();
+ [2m 72[0m |       setTasks(data.data.tasks || []);
+ [2m 73[0m |     } catch (error) {
+ [2m 74[0m |       console.error('Error fetching tasks:', error);
+ [2m 75[0m |       // Set to empty array on error but continue to show UI
+ [2m 76[0m |       setTasks([]);
+ [2m 77[0m |     } finally {
+ [2m 78[0m |       setLoading(false);
+ [2m 79[0m |     }
+ [2m 80[0m |   };
+ [2m 81[0m | 
+ [2m 82[0m |   // Only render if authenticated
+ [2m 83[0m |   if (!isAuthenticated) {
+ [2m 84[0m |     return (
+ [2m 85[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m 86[0m |         <div className="text-center">
+ [2m 87[0m |           <p>Redirecting to login...</p>
+ [2m 88[0m |         </div>
+ [2m 89[0m |       </div>
+ [2m 90[0m |     );
+ [2m 91[0m |   }
+ [2m 92[0m | 
+ [2m 93[0m |   if (loading) {
+ [2m 94[0m |     return (
+ [2m 95[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m 96[0m |         <div className="text-center">
+ [2m 97[0m |           <p>Loading your tasks...</p>
+ [2m 98[0m |         </div>
+ [2m 99[0m |       </div>
+ [2m100[0m |     );
+ [2m101[0m |   }
+ [2m102[0m |   const [tasks, setTasks] = useState<Task[]>([
+     : [33;1m                ^^^^|^^^[0m
+     :                     [33;1m`-- [33;1m`setTasks` redefined here[0m[0m
+ [2m103[0m |     { id: 1, title: 'Design new landing page', completed: false, priority: 'high', tags: ['work'], dueDate: '2024-02-15', category: 'work', createdAt: '2024-01-29', recurring: null, progress: 30, subtasks: [{id: '1', title: 'Research design trends', completed: true}, {id: '2', title: 'Create wireframes', completed: false}], notifyBefore: 30, user_id: 1 },
+ [2m104[0m |     { id: 2, title: 'Morning meditation', completed: true, priority: 'medium', tags: ['personal'], dueDate: '2024-02-10', category: 'personal', createdAt: '2024-01-29', recurring: 'daily', progress: 100, subtasks: [], notifyBefore: null, user_id: 1 },
+ [2m105[0m |     { id: 3, title: 'Grocery shopping', completed: false, priority: 'low', tags: ['errands'], dueDate: '2024-02-12', category: 'errands', createdAt: '2024-01-29', recurring: null, progress: 0, subtasks: [], notifyBefore: 60, user_id: 1 }
+     `----
+
+Import trace for requested module:
+./src/app/components/TodoApp.tsx
+./src/app/DashboardPage.tsx
+ ✓ Compiled in 6.2s (554 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (141kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (141kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (142kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (142kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ⨯ ./src/app/components/TodoApp.tsx
+Error: 
+  [31mx[0m the name `newTask` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:35:1]
+ [2m 35[0m |   const [loading, setLoading] = useState(true);
+ [2m 36[0m | 
+ [2m 37[0m |   // State for form inputs
+ [2m 38[0m |   const [newTask, setNewTask] = useState('');
+     : [31;1m         ^^^|^^^[0m
+     :             [31;1m`-- [31;1mprevious definition of `newTask` here[0m[0m
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+     : [33;1m         ^^^|^^^[0m
+     :             [33;1m`-- [33;1m`newTask` redefined here[0m[0m
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+     `----
+
+  [31mx[0m the name `setNewTask` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:35:1]
+ [2m 35[0m |   const [loading, setLoading] = useState(true);
+ [2m 36[0m | 
+ [2m 37[0m |   // State for form inputs
+ [2m 38[0m |   const [newTask, setNewTask] = useState('');
+     : [31;1m                  ^^^^^|^^^^[0m
+     :                        [31;1m`-- [31;1mprevious definition of `setNewTask` here[0m[0m
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+     : [33;1m                  ^^^^^|^^^^[0m
+     :                        [33;1m`-- [33;1m`setNewTask` redefined here[0m[0m
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+     `----
+
+  [31mx[0m the name `newTaskCategory` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:36:1]
+ [2m 36[0m | 
+ [2m 37[0m |   // State for form inputs
+ [2m 38[0m |   const [newTask, setNewTask] = useState('');
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+     : [31;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [31;1m`-- [31;1mprevious definition of `newTaskCategory` here[0m[0m
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+     : [33;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [33;1m`-- [33;1m`newTaskCategory` redefined here[0m[0m
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+     `----
+
+  [31mx[0m the name `setNewTaskCategory` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:36:1]
+ [2m 36[0m | 
+ [2m 37[0m |   // State for form inputs
+ [2m 38[0m |   const [newTask, setNewTask] = useState('');
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+     : [31;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [31;1m`-- [31;1mprevious definition of `setNewTaskCategory` here[0m[0m
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+     : [33;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [33;1m`-- [33;1m`setNewTaskCategory` redefined here[0m[0m
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+     `----
+
+  [31mx[0m the name `newTaskDueDate` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:37:1]
+ [2m 37[0m |   // State for form inputs
+ [2m 38[0m |   const [newTask, setNewTask] = useState('');
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+     : [31;1m         ^^^^^^^|^^^^^^[0m
+     :                 [31;1m`-- [31;1mprevious definition of `newTaskDueDate` here[0m[0m
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+     : [33;1m         ^^^^^^^|^^^^^^[0m
+     :                 [33;1m`-- [33;1m`newTaskDueDate` redefined here[0m[0m
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+     `----
+
+  [31mx[0m the name `setNewTaskDueDate` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:37:1]
+ [2m 37[0m |   // State for form inputs
+ [2m 38[0m |   const [newTask, setNewTask] = useState('');
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+     : [31;1m                         ^^^^^^^^|^^^^^^^^[0m
+     :                                  [31;1m`-- [31;1mprevious definition of `setNewTaskDueDate` here[0m[0m
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+     : [33;1m                         ^^^^^^^^|^^^^^^^^[0m
+     :                                  [33;1m`-- [33;1m`setNewTaskDueDate` redefined here[0m[0m
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+     `----
+
+  [31mx[0m the name `newTaskPriority` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:38:1]
+ [2m 38[0m |   const [newTask, setNewTask] = useState('');
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+     : [31;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [31;1m`-- [31;1mprevious definition of `newTaskPriority` here[0m[0m
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+     : [33;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [33;1m`-- [33;1m`newTaskPriority` redefined here[0m[0m
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+     `----
+
+  [31mx[0m the name `setNewTaskPriority` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:38:1]
+ [2m 38[0m |   const [newTask, setNewTask] = useState('');
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+     : [31;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [31;1m`-- [31;1mprevious definition of `setNewTaskPriority` here[0m[0m
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+     : [33;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [33;1m`-- [33;1m`setNewTaskPriority` redefined here[0m[0m
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+     `----
+
+  [31mx[0m the name `newTaskTags` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:39:1]
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+     : [31;1m         ^^^^^|^^^^^[0m
+     :               [31;1m`-- [31;1mprevious definition of `newTaskTags` here[0m[0m
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+     : [33;1m         ^^^^^|^^^^^[0m
+     :               [33;1m`-- [33;1m`newTaskTags` redefined here[0m[0m
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+     `----
+
+  [31mx[0m the name `setNewTaskTags` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:39:1]
+ [2m 39[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+     : [31;1m                      ^^^^^^^|^^^^^^[0m
+     :                              [31;1m`-- [31;1mprevious definition of `setNewTaskTags` here[0m[0m
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+     : [33;1m                      ^^^^^^^|^^^^^^[0m
+     :                              [33;1m`-- [33;1m`setNewTaskTags` redefined here[0m[0m
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+     `----
+
+  [31mx[0m the name `newTaskTagInput` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:40:1]
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+     : [31;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [31;1m`-- [31;1mprevious definition of `newTaskTagInput` here[0m[0m
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+     : [33;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [33;1m`-- [33;1m`newTaskTagInput` redefined here[0m[0m
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+     `----
+
+  [31mx[0m the name `setNewTaskTagInput` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:40:1]
+ [2m 40[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+     : [31;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [31;1m`-- [31;1mprevious definition of `setNewTaskTagInput` here[0m[0m
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+     : [33;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [33;1m`-- [33;1m`setNewTaskTagInput` redefined here[0m[0m
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+     `----
+
+  [31mx[0m the name `newTaskRecurring` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:41:1]
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+     : [31;1m         ^^^^^^^^|^^^^^^^[0m
+     :                  [31;1m`-- [31;1mprevious definition of `newTaskRecurring` here[0m[0m
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+     : [33;1m         ^^^^^^^^|^^^^^^^[0m
+     :                  [33;1m`-- [33;1m`newTaskRecurring` redefined here[0m[0m
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+     `----
+
+  [31mx[0m the name `setNewTaskRecurring` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:41:1]
+ [2m 41[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+     : [31;1m                           ^^^^^^^^^|^^^^^^^^^[0m
+     :                                     [31;1m`-- [31;1mprevious definition of `setNewTaskRecurring` here[0m[0m
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+     : [33;1m                           ^^^^^^^^^|^^^^^^^^^[0m
+     :                                     [33;1m`-- [33;1m`setNewTaskRecurring` redefined here[0m[0m
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+     `----
+
+  [31mx[0m the name `newTaskProgress` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:42:1]
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+     : [31;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [31;1m`-- [31;1mprevious definition of `newTaskProgress` here[0m[0m
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+     : [33;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [33;1m`-- [33;1m`newTaskProgress` redefined here[0m[0m
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+     `----
+
+  [31mx[0m the name `setNewTaskProgress` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:42:1]
+ [2m 42[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+     : [31;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [31;1m`-- [31;1mprevious definition of `setNewTaskProgress` here[0m[0m
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+     : [33;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [33;1m`-- [33;1m`setNewTaskProgress` redefined here[0m[0m
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+     `----
+
+  [31mx[0m the name `newTaskSubtasks` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:43:1]
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+     : [31;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [31;1m`-- [31;1mprevious definition of `newTaskSubtasks` here[0m[0m
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+     : [33;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [33;1m`-- [33;1m`newTaskSubtasks` redefined here[0m[0m
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+     `----
+
+  [31mx[0m the name `setNewTaskSubtasks` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:43:1]
+ [2m 43[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+     : [31;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [31;1m`-- [31;1mprevious definition of `setNewTaskSubtasks` here[0m[0m
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+     : [33;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [33;1m`-- [33;1m`setNewTaskSubtasks` redefined here[0m[0m
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+     `----
+
+  [31mx[0m the name `newTaskNotifyBefore` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:44:1]
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+     : [31;1m         ^^^^^^^^^|^^^^^^^^^[0m
+     :                   [31;1m`-- [31;1mprevious definition of `newTaskNotifyBefore` here[0m[0m
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+     : [33;1m         ^^^^^^^^^|^^^^^^^^^[0m
+     :                   [33;1m`-- [33;1m`newTaskNotifyBefore` redefined here[0m[0m
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+     `----
+
+  [31mx[0m the name `setNewTaskNotifyBefore` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:44:1]
+ [2m 44[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+     : [31;1m                              ^^^^^^^^^^^|^^^^^^^^^^[0m
+     :                                          [31;1m`-- [31;1mprevious definition of `setNewTaskNotifyBefore` here[0m[0m
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+     : [33;1m                              ^^^^^^^^^^^|^^^^^^^^^^[0m
+     :                                          [33;1m`-- [33;1m`setNewTaskNotifyBefore` redefined here[0m[0m
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+     `----
+
+  [31mx[0m the name `newSubtaskTitle` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:45:1]
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+     : [31;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [31;1m`-- [31;1mprevious definition of `newSubtaskTitle` here[0m[0m
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+     : [33;1m         ^^^^^^^|^^^^^^^[0m
+     :                 [33;1m`-- [33;1m`newSubtaskTitle` redefined here[0m[0m
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+     `----
+
+  [31mx[0m the name `setNewSubtaskTitle` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:45:1]
+ [2m 45[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+     : [31;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [31;1m`-- [31;1mprevious definition of `setNewSubtaskTitle` here[0m[0m
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+     : [33;1m                          ^^^^^^^^^|^^^^^^^^[0m
+     :                                    [33;1m`-- [33;1m`setNewSubtaskTitle` redefined here[0m[0m
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+     `----
+
+  [31mx[0m the name `filter` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:46:1]
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+     : [31;1m         ^^^|^^[0m
+     :             [31;1m`-- [31;1mprevious definition of `filter` here[0m[0m
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+     : [33;1m         ^^^|^^[0m
+     :             [33;1m`-- [33;1m`filter` redefined here[0m[0m
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m134[0m |   const [showAddForm, setShowAddForm] = useState(false);
+     `----
+
+  [31mx[0m the name `setFilter` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:46:1]
+ [2m 46[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+     : [31;1m                 ^^^^|^^^^[0m
+     :                      [31;1m`-- [31;1mprevious definition of `setFilter` here[0m[0m
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+     : [33;1m                 ^^^^|^^^^[0m
+     :                      [33;1m`-- [33;1m`setFilter` redefined here[0m[0m
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m134[0m |   const [showAddForm, setShowAddForm] = useState(false);
+     `----
+
+  [31mx[0m the name `searchQuery` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:47:1]
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+     : [31;1m         ^^^^^|^^^^^[0m
+     :               [31;1m`-- [31;1mprevious definition of `searchQuery` here[0m[0m
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+     : [33;1m         ^^^^^|^^^^^[0m
+     :               [33;1m`-- [33;1m`searchQuery` redefined here[0m[0m
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m134[0m |   const [showAddForm, setShowAddForm] = useState(false);
+     `----
+
+  [31mx[0m the name `setSearchQuery` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:47:1]
+ [2m 47[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+     : [31;1m                      ^^^^^^^|^^^^^^[0m
+     :                              [31;1m`-- [31;1mprevious definition of `setSearchQuery` here[0m[0m
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+     : [33;1m                      ^^^^^^^|^^^^^^[0m
+     :                              [33;1m`-- [33;1m`setSearchQuery` redefined here[0m[0m
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m134[0m |   const [showAddForm, setShowAddForm] = useState(false);
+     `----
+
+  [31mx[0m the name `darkMode` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:48:1]
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+     : [31;1m         ^^^^|^^^[0m
+     :              [31;1m`-- [31;1mprevious definition of `darkMode` here[0m[0m
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+     : [33;1m         ^^^^|^^^[0m
+     :              [33;1m`-- [33;1m`darkMode` redefined here[0m[0m
+ [2m134[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m135[0m | 
+ [2m136[0m |   const addTask = () => {
+     `----
+
+  [31mx[0m the name `setDarkMode` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:48:1]
+ [2m 48[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+     : [31;1m                   ^^^^^|^^^^^[0m
+     :                         [31;1m`-- [31;1mprevious definition of `setDarkMode` here[0m[0m
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+     : [33;1m                   ^^^^^|^^^^^[0m
+     :                         [33;1m`-- [33;1m`setDarkMode` redefined here[0m[0m
+ [2m134[0m |   const [showAddForm, setShowAddForm] = useState(false);
+ [2m135[0m | 
+ [2m136[0m |   const addTask = () => {
+     `----
+
+  [31mx[0m the name `showAddForm` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:49:1]
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+     : [31;1m         ^^^^^|^^^^^[0m
+     :               [31;1m`-- [31;1mprevious definition of `showAddForm` here[0m[0m
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m134[0m |   const [showAddForm, setShowAddForm] = useState(false);
+     : [33;1m         ^^^^^|^^^^^[0m
+     :               [33;1m`-- [33;1m`showAddForm` redefined here[0m[0m
+ [2m135[0m | 
+ [2m136[0m |   const addTask = () => {
+ [2m137[0m |     if (newTask.trim()) {
+     `----
+
+  [31mx[0m the name `setShowAddForm` is defined multiple times
+     ,-[[36;1;4m/Users/user/Desktop/hackathon-todo/frontend/src/app/components/TodoApp.tsx[0m:49:1]
+ [2m 49[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m 50[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m 51[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m 52[0m |   const [showAddForm, setShowAddForm] = useState(false);
+     : [31;1m                      ^^^^^^^|^^^^^^[0m
+     :                              [31;1m`-- [31;1mprevious definition of `setShowAddForm` here[0m[0m
+ [2m 53[0m | 
+ [2m 54[0m |   // Redirect to login if not authenticated
+ [2m 55[0m |   useEffect(() => {
+ [2m 56[0m |     if (!isAuthenticated) {
+ [2m 57[0m |       router.push('/login');
+ [2m 58[0m |     } else {
+ [2m 59[0m |       // Load tasks for authenticated user
+ [2m 60[0m |       fetchTasks();
+ [2m 61[0m |     }
+ [2m 62[0m |   }, [isAuthenticated, router]);
+ [2m 63[0m | 
+ [2m 64[0m |   const fetchTasks = async () => {
+ [2m 65[0m |     try {
+ [2m 66[0m |       setLoading(true);
+ [2m 67[0m |       const token = localStorage.getItem('access_token');
+ [2m 68[0m | 
+ [2m 69[0m |       if (!token) {
+ [2m 70[0m |         router.push('/login');
+ [2m 71[0m |         return;
+ [2m 72[0m |       }
+ [2m 73[0m | 
+ [2m 74[0m |       const response = await fetch('http://localhost:8000/api/tasks', {
+ [2m 75[0m |         headers: {
+ [2m 76[0m |           'Authorization': `Bearer ${token}`,
+ [2m 77[0m |         },
+ [2m 78[0m |       });
+ [2m 79[0m | 
+ [2m 80[0m |       if (!response.ok) {
+ [2m 81[0m |         if (response.status === 401) {
+ [2m 82[0m |           router.push('/login');
+ [2m 83[0m |           return;
+ [2m 84[0m |         }
+ [2m 85[0m |         throw new Error(`HTTP error! status: ${response.status}`);
+ [2m 86[0m |       }
+ [2m 87[0m | 
+ [2m 88[0m |       const data = await response.json();
+ [2m 89[0m |       setTasks(data.data.tasks || []);
+ [2m 90[0m |     } catch (error) {
+ [2m 91[0m |       console.error('Error fetching tasks:', error);
+ [2m 92[0m |       // Set to empty array on error but continue to show UI
+ [2m 93[0m |       setTasks([]);
+ [2m 94[0m |     } finally {
+ [2m 95[0m |       setLoading(false);
+ [2m 96[0m |     }
+ [2m 97[0m |   };
+ [2m 98[0m | 
+ [2m 99[0m |   // Only render if authenticated
+ [2m100[0m |   if (!isAuthenticated) {
+ [2m101[0m |     return (
+ [2m102[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m103[0m |         <div className="text-center">
+ [2m104[0m |           <p>Redirecting to login...</p>
+ [2m105[0m |         </div>
+ [2m106[0m |       </div>
+ [2m107[0m |     );
+ [2m108[0m |   }
+ [2m109[0m | 
+ [2m110[0m |   if (loading) {
+ [2m111[0m |     return (
+ [2m112[0m |       <div className="flex justify-center items-center min-h-screen">
+ [2m113[0m |         <div className="text-center">
+ [2m114[0m |           <p>Loading your tasks...</p>
+ [2m115[0m |         </div>
+ [2m116[0m |       </div>
+ [2m117[0m |     );
+ [2m118[0m |   }
+ [2m119[0m | 
+ [2m120[0m |   const [newTask, setNewTask] = useState('');
+ [2m121[0m |   const [newTaskCategory, setNewTaskCategory] = useState('personal');
+ [2m122[0m |   const [newTaskDueDate, setNewTaskDueDate] = useState('');
+ [2m123[0m |   const [newTaskPriority, setNewTaskPriority] = useState<'high' | 'medium' | 'low'>('medium');
+ [2m124[0m |   const [newTaskTags, setNewTaskTags] = useState<string[]>([]);
+ [2m125[0m |   const [newTaskTagInput, setNewTaskTagInput] = useState('');
+ [2m126[0m |   const [newTaskRecurring, setNewTaskRecurring] = useState<string | null>(null);
+ [2m127[0m |   const [newTaskProgress, setNewTaskProgress] = useState<number>(0);
+ [2m128[0m |   const [newTaskSubtasks, setNewTaskSubtasks] = useState<Subtask[]>([]);
+ [2m129[0m |   const [newTaskNotifyBefore, setNewTaskNotifyBefore] = useState<number | null>(null);
+ [2m130[0m |   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
+ [2m131[0m |   const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+ [2m132[0m |   const [searchQuery, setSearchQuery] = useState('');
+ [2m133[0m |   const [darkMode, setDarkMode] = useState(false);
+ [2m134[0m |   const [showAddForm, setShowAddForm] = useState(false);
+     : [33;1m                      ^^^^^^^|^^^^^^[0m
+     :                              [33;1m`-- [33;1m`setShowAddForm` redefined here[0m[0m
+ [2m135[0m | 
+ [2m136[0m |   const addTask = () => {
+ [2m137[0m |     if (newTask.trim()) {
+     `----
+
+Import trace for requested module:
+./src/app/components/TodoApp.tsx
+./src/app/DashboardPage.tsx
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (141kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (141kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (142kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+<w> [webpack.cache.PackFileCacheStrategy] Serializing big strings (142kiB) impacts deserialization performance (consider using Buffer instead and decode when needed)
+ ✓ Compiled in 4s (554 modules)

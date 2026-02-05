@@ -40,32 +40,41 @@ app.include_router(chat_router)
 @app.post("/api/register", response_model=UserResponse)
 async def register_user(user_data: UserRegister, session: Session = Depends(get_session)):
     """Register a new user."""
-    # Check if user already exists
-    existing_user = session.query(User).filter(
-        (User.email == user_data.email) | (User.username == user_data.username)
-    ).first()
+    try:
+        # Check if user already exists
+        existing_user = session.query(User).filter(
+            (User.email == user_data.email) | (User.username == user_data.username)
+        ).first()
 
-    if existing_user:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="User with this email or username already exists"
+        if existing_user:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="User with this email or username already exists"
+            )
+
+        # Hash the password
+        hashed_password = get_password_hash(user_data.password)
+
+        # Create new user
+        new_user = User(
+            email=user_data.email,
+            username=user_data.username,
+            hashed_password=hashed_password
         )
 
-    # Hash the password
-    hashed_password = get_password_hash(user_data.password)
+        session.add(new_user)
+        session.commit()
+        session.refresh(new_user)
 
-    # Create new user
-    new_user = User(
-        email=user_data.email,
-        username=user_data.username,
-        hashed_password=hashed_password
-    )
-
-    session.add(new_user)
-    session.commit()
-    session.refresh(new_user)
-
-    return new_user
+        return new_user
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"Registration error: {str(e)}")
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Registration failed: {str(e)}"
+        )
 
 @app.post("/api/login", response_model=Token)
 async def login_user(user_credentials: UserLogin, session: Session = Depends(get_session)):
