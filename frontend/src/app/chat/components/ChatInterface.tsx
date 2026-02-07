@@ -59,8 +59,8 @@ export default function ChatInterface() {
         throw new Error('Authentication token not found');
       }
 
-      // Call the chat API on backend server
-      const response = await fetch('http://localhost:8000/api/chat', {
+      // Call the chat API on deployed backend server
+      const response = await fetch('https://ghazakshaikh1-to-do-app.hf.space/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

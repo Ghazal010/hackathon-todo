@@ -44,7 +44,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
-      const response = await fetch('http://localhost:8000/api/login', {
+      const response = await fetch('https://ghazakshaikh1-to-do-app.hf.space/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localStorage.setItem('access_token', access_token);
 
       // Get user profile
-      const userResponse = await fetch('http://localhost:8000/api/users/me', {
+      const userResponse = await fetch('https://ghazakshaikh1-to-do-app.hf.space/api/users/me', {
         headers: {
           'Authorization': `Bearer ${access_token}`,
         },
@@ -90,7 +90,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const register = async (email: string, username: string, password: string): Promise<boolean> => {
     try {
-      const response = await fetch('http://localhost:8000/api/register', {
+      const response = await fetch('https://ghazakshaikh1-to-do-app.hf.space/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
