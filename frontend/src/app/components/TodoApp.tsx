@@ -5,6 +5,12 @@ import { Plus, Check, Trash2, Calendar, Search, Filter, Star, Moon, Sun, Circle,
 import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
 
+interface Subtask {
+  id: string;
+  title: string;
+  completed: boolean;
+}
+
 interface Task {
   id: number;
   title: string;
@@ -19,22 +25,63 @@ interface Task {
   subtasks: Subtask[]; // Array of subtasks
   notifyBefore: number | null; // Minutes before deadline to notify
   updatedAt?: string;
-  user_id: number;
-}
-
-interface Subtask {
-  id: string;
-  title: string;
-  completed: boolean;
+  user_id: number; // Required field for user association
 }
 
 export default function TodoApp() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
   const router = useRouter();
-  const [tasks, setTasks] = useState<Task[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [tasks, setTasks] = useState<Task[]>([
+    {
+      id: 1,
+      title: 'Design new landing page',
+      completed: false,
+      priority: 'high',
+      tags: ['work'],
+      dueDate: '2024-02-15',
+      category: 'work',
+      createdAt: '2024-01-29',
+      recurring: null,
+      progress: 30,
+      subtasks: [
+        {id: '1', title: 'Research design trends', completed: true},
+        {id: '2', title: 'Create wireframes', completed: false}
+      ],
+      notifyBefore: 30,
+      user_id: 1
+    },
+    {
+      id: 2,
+      title: 'Morning meditation',
+      completed: true,
+      priority: 'medium',
+      tags: ['personal'],
+      dueDate: '2024-02-10',
+      category: 'personal',
+      createdAt: '2024-01-29',
+      recurring: 'daily',
+      progress: 100,
+      subtasks: [],
+      notifyBefore: null,
+      user_id: 1
+    },
+    {
+      id: 3,
+      title: 'Grocery shopping',
+      completed: false,
+      priority: 'low',
+      tags: ['errands'],
+      dueDate: '2024-02-12',
+      category: 'errands',
+      createdAt: '2024-01-29',
+      recurring: null,
+      progress: 0,
+      subtasks: [],
+      notifyBefore: 60,
+      user_id: 1
+    }
+  ]);
 
-  // State for form inputs
   const [newTask, setNewTask] = useState('');
   const [newTaskCategory, setNewTaskCategory] = useState('personal');
   const [newTaskDueDate, setNewTaskDueDate] = useState('');
@@ -55,67 +102,8 @@ export default function TodoApp() {
   useEffect(() => {
     if (!isAuthenticated) {
       router.push('/login');
-    } else {
-      // Load tasks for authenticated user
-      fetchTasks();
     }
   }, [isAuthenticated, router]);
-
-  const fetchTasks = async () => {
-    try {
-      setLoading(true);
-      const token = localStorage.getItem('access_token');
-
-      if (!token) {
-        router.push('/login');
-        return;
-      }
-
-      const response = await fetch('https://ghazakshaikh1-to-do-app.hf.space/api/tasks', {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
-      });
-
-      if (!response.ok) {
-        if (response.status === 401) {
-          router.push('/login');
-          return;
-        }
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setTasks(data.data.tasks || []);
-    } catch (error) {
-      console.error('Error fetching tasks:', error);
-      // Set to empty array on error but continue to show UI
-      setTasks([]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // Only render if authenticated
-  if (!isAuthenticated) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="text-center">
-          <p>Redirecting to login...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="text-center">
-          <p>Loading your tasks...</p>
-        </div>
-      </div>
-    );
-  }
 
   const addTask = () => {
     if (newTask.trim()) {
@@ -131,7 +119,8 @@ export default function TodoApp() {
         recurring: newTaskRecurring || null,
         progress: newTaskProgress,
         subtasks: newTaskSubtasks,
-        notifyBefore: newTaskNotifyBefore
+        notifyBefore: newTaskNotifyBefore,
+        user_id: user?.id || 1  // Use actual user ID from auth context, fallback to 1
       };
       setTasks([...tasks, task]);
       setNewTask('');
@@ -159,6 +148,28 @@ export default function TodoApp() {
     setTasks(tasks.filter(task => task.id !== id));
   };
 
+  const addSubtask = () => {
+    if (newSubtaskTitle.trim()) {
+      const newSubtask: Subtask = {
+        id: Date.now().toString(),
+        title: newSubtaskTitle,
+        completed: false
+      };
+      setNewTaskSubtasks([...newTaskSubtasks, newSubtask]);
+      setNewSubtaskTitle('');
+    }
+  };
+
+  const toggleSubtask = (subtaskId: string) => {
+    setNewTaskSubtasks(newTaskSubtasks.map(subtask =>
+      subtask.id === subtaskId ? { ...subtask, completed: !subtask.completed } : subtask
+    ));
+  };
+
+  const removeSubtask = (subtaskId: string) => {
+    setNewTaskSubtasks(newTaskSubtasks.filter(subtask => subtask.id !== subtaskId));
+  };
+
   const filteredTasks = tasks.filter(task => {
     const matchesFilter = filter === 'all' ? true :
       filter === 'active' ? !task.completed :
@@ -173,9 +184,18 @@ export default function TodoApp() {
     active: tasks.filter(t => !t.completed).length
   };
 
+  if (!isAuthenticated) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="text-center">
+          <p>Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={`min-h-screen transition-all duration-700 ${darkMode ? 'dark' : ''}`}>
-
       {/* Background with decorative blobs */}
       <div className="gradient-bg min-h-screen relative overflow-hidden">
         <div className="decorative-blob w-96 h-96 bg-purple-300 top-10 -left-20" style={{animationDelay: '0s'}}></div>
@@ -197,18 +217,6 @@ export default function TodoApp() {
               Your elegant task companion
             </p>
           </div>
-
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="fixed top-6 right-6 w-12 h-12 rounded-full glass-effect flex items-center justify-center hover-lift shadow-lg ripple z-50"
-          >
-            {darkMode ? (
-              <Sun className="w-5 h-5" style={{color: '#F2D5F8'}} />
-            ) : (
-              <Moon className="w-5 h-5" style={{color: '#8D89A6'}} />
-            )}
-          </button>
 
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -252,7 +260,7 @@ export default function TodoApp() {
                   placeholder="Search your dreams..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 rounded-2xl border-2 border-transparent bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow transition-all dark:text-white"
+                  className="w-full pl-12 pr-4 py-3 rounded-xl border-2 border-transparent bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow transition-all dark:text-white"
                   style={{borderColor: 'transparent'}}
                 />
               </div>
@@ -261,14 +269,15 @@ export default function TodoApp() {
                   <button
                     key={f}
                     onClick={() => setFilter(f as 'all' | 'active' | 'completed')}
-                    className={`px-6 py-3 rounded-2xl font-medium transition-all ripple capitalize ${
+                    className={`px-4 py-2 rounded-lg transition-colors flex items-center space-x-2 ${
                       f === filter
-                        ? 'button-gradient text-white shadow-lg'
-                        : 'bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50'
+                        ? 'bg-white/20 text-white'
+                        : 'hover:bg-white/10'
                     }`}
                     style={f !== filter ? {color: '#8D89A6'} : {}}
                   >
-                    {f}
+                    <Filter className="w-4 h-4" />
+                    <span className="capitalize">{f}</span>
                   </button>
                 ))}
               </div>
@@ -298,10 +307,9 @@ export default function TodoApp() {
                     placeholder="What's on your mind?"
                     value={newTask}
                     onChange={(e) => setNewTask(e.target.value)}
-                    onKeyPress={(e) => e.key === 'Enter' && addTask()}
-                    autoFocus
-                    className="w-full px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
+                    className="w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
                     style={{borderColor: '#E6C0E9'}}
+                    autoFocus
                   />
                 </div>
 
@@ -310,12 +318,11 @@ export default function TodoApp() {
                   <select
                     value={newTaskCategory}
                     onChange={(e) => setNewTaskCategory(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
+                    className="w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
                     style={{borderColor: '#E6C0E9'}}
                   >
                     <option value="personal">Personal</option>
                     <option value="work">Work</option>
-                    <option value="office">Office</option>
                     <option value="health">Health</option>
                     <option value="finance">Finance</option>
                     <option value="education">Education</option>
@@ -328,7 +335,7 @@ export default function TodoApp() {
                   <select
                     value={newTaskPriority}
                     onChange={(e) => setNewTaskPriority(e.target.value as 'high' | 'medium' | 'low')}
-                    className="w-full px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
+                    className="w-full px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
                     style={{borderColor: '#E6C0E9'}}
                   >
                     <option value="high">High</option>
@@ -339,69 +346,78 @@ export default function TodoApp() {
 
                 <div>
                   <label className="block text-sm font-medium mb-2" style={{color: '#8D89A6'}}>Due Date</label>
-                  <input
-                    type="date"
-                    value={newTaskDueDate}
-                    onChange={(e) => setNewTaskDueDate(e.target.value)}
-                    className="w-full px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
-                    style={{borderColor: '#E6C0E9'}}
-                  />
+                  <div className="relative">
+                    <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5" style={{color: '#BFABCB'}} />
+                    <input
+                      type="date"
+                      value={newTaskDueDate}
+                      onChange={(e) => setNewTaskDueDate(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
+                      style={{borderColor: '#E6C0E9'}}
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium mb-2" style={{color: '#8D89A6'}}>Recurring</label>
-                  <select
-                    value={newTaskRecurring || ''}
-                    onChange={(e) => setNewTaskRecurring(e.target.value || null)}
-                    className="w-full px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
-                    style={{borderColor: '#E6C0E9'}}
-                  >
-                    <option value="">None</option>
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="monthly">Monthly</option>
-                  </select>
+                  <label className="block text-sm font-medium mb-2" style={{color: '#8D89A6'}}>Progress</label>
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="range"
+                      min="0"
+                      max="100"
+                      value={newTaskProgress}
+                      onChange={(e) => setNewTaskProgress(parseInt(e.target.value))}
+                      className="flex-1"
+                    />
+                    <span className="text-sm w-10" style={{color: '#8D89A6'}}>{newTaskProgress}%</span>
+                  </div>
                 </div>
 
                 <div className="col-span-2">
-                  <label className="block text-sm font-medium mb-2" style={{color: '#8D89A6'}}>Tags (comma separated)</label>
-                  <div className="flex gap-2">
+                  <label className="block text-sm font-medium mb-2" style={{color: '#8D89A6'}}>Tags</label>
+                  <div className="flex gap-2 mb-2">
                     <input
                       type="text"
-                      placeholder="Enter tags separated by commas"
+                      placeholder="Add a tag"
                       value={newTaskTagInput}
                       onChange={(e) => setNewTaskTagInput(e.target.value)}
                       onKeyPress={(e) => {
                         if (e.key === 'Enter') {
                           e.preventDefault();
-                          const tags = newTaskTagInput.split(',').map(tag => tag.trim()).filter(tag => tag);
-                          setNewTaskTags(prev => [...prev, ...tags]);
-                          setNewTaskTagInput('');
+                          if (newTaskTagInput.trim() && !newTaskTags.includes(newTaskTagInput.trim())) {
+                            setNewTaskTags([...newTaskTags, newTaskTagInput.trim()]);
+                            setNewTaskTagInput('');
+                          }
                         }
                       }}
-                      className="flex-1 px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
+                      className="flex-1 px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
                       style={{borderColor: '#E6C0E9'}}
                     />
                     <button
                       type="button"
                       onClick={() => {
-                        const tags = newTaskTagInput.split(',').map(tag => tag.trim()).filter(tag => tag);
-                        setNewTaskTags(prev => [...prev, ...tags]);
-                        setNewTaskTagInput('');
+                        if (newTaskTagInput.trim() && !newTaskTags.includes(newTaskTagInput.trim())) {
+                          setNewTaskTags([...newTaskTags, newTaskTagInput.trim()]);
+                          setNewTaskTagInput('');
+                        }
                       }}
-                      className="px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50 ripple"
+                      className="px-4 py-3 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50 ripple"
                       style={{color: '#8D89A6'}}
                     >
                       Add
                     </button>
                   </div>
-                  <div className="flex flex-wrap gap-2 mt-2">
+                  <div className="flex flex-wrap gap-2">
                     {newTaskTags.map((tag, index) => (
-                      <span key={index} className="tag-pill flex items-center gap-1">
+                      <span
+                        key={index}
+                        className="tag-pill flex items-center gap-1 px-3 py-1 rounded-full text-sm"
+                        style={{backgroundColor: '#BFABCB' + '30', color: '#8D89A6'}}
+                      >
                         {tag}
                         <button
                           type="button"
-                          onClick={() => setNewTaskTags(prev => prev.filter((_, i) => i !== index))}
+                          onClick={() => setNewTaskTags(newTaskTags.filter((_, i) => i !== index))}
                           className="ml-1 text-red-500 hover:text-red-700"
                         >
                           ×
@@ -411,40 +427,9 @@ export default function TodoApp() {
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium mb-2" style={{color: '#8D89A6'}}>Progress (%)</label>
-                  <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={newTaskProgress}
-                    onChange={(e) => setNewTaskProgress(parseInt(e.target.value))}
-                    className="w-full"
-                  />
-                  <div className="text-center text-sm" style={{color: '#8D89A6'}}>{newTaskProgress}%</div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium mb-2" style={{color: '#8D89A6'}}>Notification Before (minutes)</label>
-                  <select
-                    value={newTaskNotifyBefore || ''}
-                    onChange={(e) => setNewTaskNotifyBefore(e.target.value ? parseInt(e.target.value) : null)}
-                    className="w-full px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
-                    style={{borderColor: '#E6C0E9'}}
-                  >
-                    <option value="">None</option>
-                    <option value="5">5 minutes</option>
-                    <option value="15">15 minutes</option>
-                    <option value="30">30 minutes</option>
-                    <option value="60">1 hour</option>
-                    <option value="120">2 hours</option>
-                    <option value="1440">1 day</option>
-                  </select>
-                </div>
-
                 <div className="col-span-2">
                   <label className="block text-sm font-medium mb-2" style={{color: '#8D89A6'}}>Subtasks</label>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 mb-2">
                     <input
                       type="text"
                       placeholder="Add a subtask"
@@ -453,51 +438,39 @@ export default function TodoApp() {
                       onKeyPress={(e) => {
                         if (e.key === 'Enter') {
                           e.preventDefault();
-                          if (newSubtaskTitle.trim()) {
-                            setNewTaskSubtasks(prev => [...prev, {id: Date.now().toString(), title: newSubtaskTitle, completed: false}]);
-                            setNewSubtaskTitle('');
-                          }
+                          addSubtask();
                         }
                       }}
-                      className="flex-1 px-4 py-3 rounded-2xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
+                      className="flex-1 px-4 py-3 rounded-xl border-2 bg-white/50 dark:bg-slate-800/50 focus:outline-none search-glow dark:text-white"
                       style={{borderColor: '#E6C0E9'}}
                     />
                     <button
                       type="button"
-                      onClick={() => {
-                        if (newSubtaskTitle.trim()) {
-                          setNewTaskSubtasks(prev => [...prev, {id: Date.now().toString(), title: newSubtaskTitle, completed: false}]);
-                          setNewSubtaskTitle('');
-                        }
-                      }}
-                      className="px-4 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50 ripple"
+                      onClick={addSubtask}
+                      className="px-4 py-3 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50 ripple"
                       style={{color: '#8D89A6'}}
                     >
                       Add
                     </button>
                   </div>
-                  <div className="mt-2">
-                    {newTaskSubtasks.map((subtask, index) => (
-                      <div key={subtask.id} className="flex items-center gap-2 mb-1">
+                  <div className="space-y-2">
+                    {newTaskSubtasks.map((subtask) => (
+                      <div key={subtask.id} className="flex items-center gap-2 p-2 bg-white/30 dark:bg-slate-700/30 rounded-lg">
                         <input
                           type="checkbox"
                           checked={subtask.completed}
-                          onChange={() => {
-                            const updatedSubtasks = [...newTaskSubtasks];
-                            updatedSubtasks[index] = {...subtask, completed: !subtask.completed};
-                            setNewTaskSubtasks(updatedSubtasks);
-                          }}
-                          className="w-4 h-4"
+                          onChange={() => toggleSubtask(subtask.id)}
+                          className="w-5 h-5 rounded"
                         />
-                        <span className={subtask.completed ? 'line-through opacity-50' : ''} style={{color: '#8D89A6'}}>
+                        <span className={`${subtask.completed ? 'line-through opacity-50' : ''}`} style={{color: '#8D89A6'}}>
                           {subtask.title}
                         </span>
                         <button
                           type="button"
-                          onClick={() => setNewTaskSubtasks(prev => prev.filter((_, i) => i !== index))}
-                          className="text-red-500 hover:text-red-700 ml-2"
+                          onClick={() => removeSubtask(subtask.id)}
+                          className="ml-auto text-red-500 hover:text-red-700"
                         >
-                          ×
+                          <Trash2 className="w-4 h-4" />
                         </button>
                       </div>
                     ))}
@@ -507,13 +480,13 @@ export default function TodoApp() {
                 <div className="col-span-2 flex gap-3 justify-end">
                   <button
                     onClick={addTask}
-                    className="px-8 py-3 rounded-2xl button-gradient text-white font-semibold hover-lift shadow-lg ripple"
+                    className="px-8 py-3 rounded-xl button-gradient text-white font-semibold hover:opacity-90 transition-opacity shadow-lg ripple"
                   >
                     Add Task
                   </button>
                   <button
                     onClick={() => setShowAddForm(false)}
-                    className="px-6 py-3 rounded-2xl bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50 ripple"
+                    className="px-6 py-3 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-white/80 dark:hover:bg-slate-700/50 ripple"
                     style={{color: '#8D89A6'}}
                   >
                     Cancel
@@ -538,23 +511,23 @@ export default function TodoApp() {
                 </p>
               </div>
             ) : (
-              filteredTasks.map((task, idx) => (
+              filteredTasks.map((task) => (
                 <div
                   key={task.id}
                   className={`glass-effect rounded-3xl p-6 hover-lift task-enter priority-${task.priority}`}
-                  style={{animationDelay: `${idx * 0.05}s`}}
+                  style={{animationDelay: `${task.id * 0.05}s`}}
                 >
                   <div className="flex items-start gap-4">
-                    <label className="checkbox-custom mt-1">
-                      <input
-                        type="checkbox"
-                        checked={task.completed}
-                        onChange={() => toggleTask(task.id)}
-                      />
-                      <div className="checkbox-mark">
-                        {task.completed && <Check className="w-4 h-4 text-white" />}
-                      </div>
-                    </label>
+                    <button
+                      onClick={() => toggleTask(task.id)}
+                      className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all ${
+                        task.completed
+                          ? 'bg-gradient-to-br from-purple-400 to-purple-500 border-transparent'
+                          : 'border-purple-300 hover:border-purple-400'
+                      }`}
+                    >
+                      {task.completed && <Check className="w-4 h-4 text-white" />}
+                    </button>
 
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-1">
@@ -562,7 +535,6 @@ export default function TodoApp() {
                           style={{
                             backgroundColor: task.category === 'work' ? '#BFABCB' :
                                             task.category === 'personal' ? '#E6C0E9' :
-                                            task.category === 'office' ? '#EAC8CA' :
                                             task.category === 'health' ? '#48DBFB' :
                                             task.category === 'finance' ? '#FECB57' :
                                             task.category === 'education' ? '#1DD1A1' :
@@ -577,6 +549,12 @@ export default function TodoApp() {
                         }`}>
                           {task.priority}
                         </span>
+                        {task.dueDate && (
+                          <span className="text-xs px-2 py-1 rounded-full bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-200 flex items-center gap-1">
+                            <Calendar className="w-3 h-3" />
+                            {new Date(task.dueDate).toLocaleDateString()}
+                          </span>
+                        )}
                       </div>
                       <h3
                         className={`text-lg font-semibold mb-2 transition-all ${
@@ -600,7 +578,7 @@ export default function TodoApp() {
                               style={{
                                 width: `${task.progress}%`,
                                 backgroundColor: task.progress < 30 ? '#FF6B6B' :
-                                              task.progress < 70 ? '#FECB57' : '#1DD1A1'
+                                                task.progress < 70 ? '#FECB57' : '#1DD1A1'
                               }}
                             ></div>
                           </div>
@@ -637,19 +615,19 @@ export default function TodoApp() {
                       <div className="flex flex-wrap items-center gap-3">
                         {task.tags.map((tag) => (
                           <span key={tag} className="tag-pill">
-                            {tag}
+                            #{tag}
                           </span>
                         ))}
                         {task.dueDate && (
                           <div className="flex items-center gap-1 text-sm" style={{color: '#BFABCB'}}>
                             <Calendar className="w-4 h-4" />
-                            <span>{new Date(task.dueDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                            <span>Due: {new Date(task.dueDate).toLocaleDateString()}</span>
                           </div>
                         )}
-                        {task.createdAt && (
+                        {task.recurring && (
                           <div className="flex items-center gap-1 text-sm" style={{color: '#BFABCB'}}>
-                            <Calendar className="w-4 h-4" />
-                            <span>Added: {new Date(task.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                            <Clock className="w-4 h-4" />
+                            <span>Recurring: {task.recurring}</span>
                           </div>
                         )}
                         {task.notifyBefore && (
@@ -658,23 +636,15 @@ export default function TodoApp() {
                             <span>Notify: {task.notifyBefore} min before</span>
                           </div>
                         )}
-                        {task.recurring && (
-                          <div className="flex items-center gap-1 text-sm" style={{color: '#BFABCB'}}>
-                            <Star className="w-4 h-4" />
-                            <span>{task.recurring}</span>
-                          </div>
-                        )}
                       </div>
                     </div>
 
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => deleteTask(task.id)}
-                        className="w-10 h-10 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-red-100 dark:hover:bg-red-900/30 flex items-center justify-center transition-all ripple group"
-                      >
-                        <Trash2 className="w-4 h-4 text-slate-400 group-hover:text-red-500 transition-colors" />
-                      </button>
-                    </div>
+                    <button
+                      onClick={() => deleteTask(task.id)}
+                      className="w-10 h-10 rounded-xl bg-white/50 dark:bg-slate-800/50 hover:bg-red-100 dark:hover:bg-red-900/30 flex items-center justify-center transition-all ripple"
+                    >
+                      <Trash2 className="w-5 h-5 text-slate-400 hover:text-red-500" />
+                    </button>
                   </div>
                 </div>
               ))

@@ -14,7 +14,7 @@ from .models import (
 from .chat_routes import router as chat_router
 from .auth import (
     authenticate_user, create_access_token,
-    get_current_active_user, get_password_hash
+    get_current_user, get_current_active_user, get_password_hash, verify_password
 )
 
 app = FastAPI(title="DreamFlow API", version="1.0.0")
@@ -96,7 +96,7 @@ async def login_user(user_credentials: UserLogin, session: Session = Depends(get
     return {"access_token": access_token, "token_type": "bearer"}
 
 @app.get("/api/users/me", response_model=UserResponse)
-async def read_users_me(current_user: User = Depends(get_current_active_user)):
+async def read_users_me(current_user: User = Depends(get_current_user)):
     """Get current user's profile."""
     return current_user
 
@@ -128,7 +128,7 @@ async def root():
 async def get_tasks(
     filter_param: str = Query("all", alias="filter"),
     search: str = Query(""),
-    current_user: User = Depends(get_current_active_user),
+    current_user: User = Depends(get_current_user),
     session: Session = Depends(get_session)
 ):
     """Get all tasks for the current user with optional filtering and search"""
@@ -165,7 +165,7 @@ async def get_tasks(
 @app.post("/api/tasks")
 async def create_task(
     task_data: TaskCreate,
-    current_user: User = Depends(get_current_active_user),
+    current_user: User = Depends(get_current_user),
     session: Session = Depends(get_session)
 ):
     """Create a new task for the current user"""
@@ -199,7 +199,7 @@ async def create_task(
 @app.get("/api/tasks/{task_id}")
 async def get_task(
     task_id: int,
-    current_user: User = Depends(get_current_active_user),
+    current_user: User = Depends(get_current_user),
     session: Session = Depends(get_session)
 ):
     """Get a specific task by ID for the current user"""
@@ -216,7 +216,7 @@ async def get_task(
 async def update_task(
     task_id: int,
     task_data: TaskUpdate,
-    current_user: User = Depends(get_current_active_user),
+    current_user: User = Depends(get_current_user),
     session: Session = Depends(get_session)
 ):
     """Update a specific task by ID for the current user"""
@@ -247,7 +247,7 @@ async def update_task(
 @app.delete("/api/tasks/{task_id}")
 async def delete_task(
     task_id: int,
-    current_user: User = Depends(get_current_active_user),
+    current_user: User = Depends(get_current_user),
     session: Session = Depends(get_session)
 ):
     """Delete a specific task by ID for the current user"""
@@ -267,7 +267,7 @@ async def delete_task(
 @app.patch("/api/tasks/{task_id}/toggle-complete")
 async def toggle_task_completion(
     task_id: int,
-    current_user: User = Depends(get_current_active_user),
+    current_user: User = Depends(get_current_user),
     session: Session = Depends(get_session)
 ):
     """Toggle the completion status of a task for the current user"""
@@ -289,7 +289,7 @@ async def toggle_task_completion(
 
 @app.get("/api/tasks/stats")
 async def get_task_stats(
-    current_user: User = Depends(get_current_active_user),
+    current_user: User = Depends(get_current_user),
     session: Session = Depends(get_session)
 ):
     """Get task statistics for the current user"""

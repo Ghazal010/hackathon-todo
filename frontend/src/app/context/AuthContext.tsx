@@ -1,6 +1,9 @@
 'use client';
 
+'use client';
+
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface User {
   id: number;
@@ -22,6 +25,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     // Check if user is logged in on component mount
@@ -53,9 +57,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Login error:', errorData);
-        return false;
+        throw new Error('Login failed');
       }
 
       const data = await response.json();
@@ -72,15 +74,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
       if (!userResponse.ok) {
-        console.error('Failed to get user data');
-        return false;
+        throw new Error('Failed to get user data');
       }
 
       const userData = await userResponse.json();
       setUser(userData);
       setIsAuthenticated(true);
-      localStorage.setItem('user_data', JSON.stringify(userData));
 
+      router.push('/');
       return true;
     } catch (error) {
       console.error('Login error:', error);
@@ -99,20 +100,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Registration error:', errorData);
-        return false;
+        throw new Error('Registration failed');
       }
 
-      const userData = await response.json();
+      const data = await response.json();
 
       // Automatically log in after successful registration
-      const loginSuccess = await login(email, password);
-      if (loginSuccess) {
-        return true;
-      } else {
-        return false;
-      }
+      return await login(email, password);
     } catch (error) {
       console.error('Registration error:', error);
       return false;
@@ -124,6 +118,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem('user_data');
     setUser(null);
     setIsAuthenticated(false);
+    router.push('/login');
   };
 
   return (

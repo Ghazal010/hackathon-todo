@@ -27,12 +27,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
         truncated_password = plain_password[:72] if len(plain_password) > 72 else plain_password
         return pwd_context.verify(truncated_password, hashed_password)
     except Exception as e:
-        # If bcrypt verification fails, it might be a different hash format
-        # In that case, we could try alternative methods if needed
-        import hashlib
-        # Try SHA256 comparison as a fallback
-        if hashed_password == hashlib.sha256(plain_password.encode('utf-8')).hexdigest():
-            return True
+        # If bcrypt verification fails, return False
         return False
 
 def get_password_hash(password: str) -> str:
@@ -64,7 +59,7 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
 
-async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_session)) -> User:
+async def get_current_user(token: str = Depends(oauth2_scheme), session: Session = Depends(get_session)) -> User:
     """Get the current user from the token."""
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -73,18 +68,20 @@ async def get_current_user(token: str = Depends(oauth2_scheme), db: Session = De
     )
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        username: str = payload.get("sub")
-        if username is None:
+        email: str = payload.get("sub")  # Changed to email
+        if email is None:
             raise credentials_exception
-        token_data = TokenData(username=username)
+        token_data = TokenData(username=email)  # Keep for compatibility
     except JWTError:
         raise credentials_exception
 
-    user = db.query(User).filter(User.username == token_data.username).first()
+    user = session.query(User).filter(User.email == email).first()  # Changed to filter by email
     if user is None:
         raise credentials_exception
     return user
 
-def get_current_active_user(current_user: User = Depends(get_current_user)) -> User:
+async def get_current_active_user(current_user: User = Depends(get_current_user)) -> User:
     """Get the current active user (can be extended for active/inactive checks)."""
+    if current_user is None:
+        raise HTTPException(status_code=401, detail="User not authenticated")
     return current_user
