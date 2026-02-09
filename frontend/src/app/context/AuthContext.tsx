@@ -48,6 +48,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
+      console.log('Attempting login...');
+      
       const response = await fetch('https://ghazakshaikh1-to-do-app.hf.space/api/login', {
         method: 'POST',
         headers: {
@@ -56,33 +58,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         body: JSON.stringify({ email, password }),
       });
 
-      if (!response.ok) {
-        throw new Error('Login failed');
-      }
-
+      console.log('Response status:', response.status);
       const data = await response.json();
-      const { access_token } = data;
+      console.log('Response data:', data);
 
-      // Store token
-      localStorage.setItem('access_token', access_token);
+      if (data.access_token) {
+        const { access_token } = data;
+        localStorage.setItem('access_token', access_token);
+        
+        const userResponse = await fetch('https://ghazakshaikh1-to-do-app.hf.space/api/users/me', {
+          headers: {
+            'Authorization': `Bearer ${access_token}`,
+          },
+        });
 
-      // Get user profile
-      const userResponse = await fetch('https://ghazakshaikh1-to-do-app.hf.space/api/users/me', {
-        headers: {
-          'Authorization': `Bearer ${access_token}`,
-        },
-      });
-
-      if (!userResponse.ok) {
-        throw new Error('Failed to get user data');
+        if (userResponse.ok) {
+          const userData = await userResponse.json();
+          localStorage.setItem('user_data', JSON.stringify(userData));
+          setUser(userData);
+          setIsAuthenticated(true);
+          return true;
+        }
       }
-
-      const userData = await userResponse.json();
-      setUser(userData);
-      setIsAuthenticated(true);
-
-      router.push('/');
-      return true;
+      
+      return false;
+      
     } catch (error) {
       console.error('Login error:', error);
       return false;
