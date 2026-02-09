@@ -77,10 +77,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           localStorage.setItem('user_data', JSON.stringify(userData));
           setUser(userData);
           setIsAuthenticated(true);
-
-          await new Promise(resolve => setTimeout(resolve, 100));
-          router.push('/');
-          
           return true;
         }
       }
