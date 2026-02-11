@@ -98,13 +98,6 @@ export default function TodoApp() {
   const [darkMode, setDarkMode] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
 
-  // Redirect to login if not authenticated
-  useEffect(() => {
-    if (!isAuthenticated) {
-      router.push('/login');
-    }
-  }, [isAuthenticated, router]);
-
   const addTask = () => {
     if (newTask.trim()) {
       const task: Task = {
@@ -183,16 +176,6 @@ export default function TodoApp() {
     completed: tasks.filter(t => t.completed).length,
     active: tasks.filter(t => !t.completed).length
   };
-
-  if (!isAuthenticated) {
-    return (
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="text-center">
-          <p>Redirecting to login...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className={`min-h-screen transition-all duration-700 ${darkMode ? 'dark' : ''}`}>
